@@ -13,6 +13,7 @@ E:\Medical Store Management System\Medical Store Management System\obj\Debug\net
 E:\Medical Store Management System\Medical Store Management System\obj\Debug\net8.0-windows\Medical Store Management.pdb
 E:\Medical Store Management System\Medical Store Management System\obj\Debug\net8.0-windows\Medical Store Management.genruntimeconfig.cache
 E:\Medical Store Management System\Medical Store Management System\obj\Debug\net8.0-windows\ref\Medical Store Management.dll
-E:\Medical Store Management System\Medical Store Management System\obj\Debug\net8.0-windows\Medical_Store_Management.formHome.resources
 E:\Medical Store Management System\Medical Store Management System\obj\Debug\net8.0-windows\Medical_Store_Management.formSplash.resources
 E:\Medical Store Management System\Medical Store Management System\obj\Debug\net8.0-windows\Medical_Store_Management.Resources.resources
+E:\Medical Store Management System\Medical Store Management System\obj\Debug\net8.0-windows\Medical_Store_Management.frmLogin.resources
+E:\Medical Store Management System\Medical Store Management System\obj\Debug\net8.0-windows\Medical Store Management.sourcelink.json

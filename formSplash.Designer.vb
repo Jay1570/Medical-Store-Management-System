@@ -35,16 +35,17 @@ Partial Class formSplash
         labelApp.BackColor = Color.Transparent
         labelApp.Font = New Font("Century Gothic", 20F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         labelApp.ForeColor = SystemColors.ButtonFace
-        labelApp.Location = New Point(30, 200)
+        labelApp.Location = New Point(250, 200)
         labelApp.Name = "labelApp"
-        labelApp.Size = New Size(742, 47)
+        labelApp.Size = New Size(208, 47)
         labelApp.TabIndex = 0
-        labelApp.Text = "Medical Store Management Software"
+        labelApp.Text = "Welcome"
         labelApp.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' ProgressBarLoad
         ' 
         ProgressBarLoad.BackColor = Color.Cyan
+        ProgressBarLoad.ForeColor = Color.FromArgb(CByte(128), CByte(255), CByte(255))
         ProgressBarLoad.Location = New Point(100, 400)
         ProgressBarLoad.Name = "ProgressBarLoad"
         ProgressBarLoad.Size = New Size(500, 25)
@@ -60,7 +61,7 @@ Partial Class formSplash
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Tomato
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
-        ClientSize = New Size(800, 800)
+        ClientSize = New Size(700, 600)
         Controls.Add(ProgressBarLoad)
         Controls.Add(labelApp)
         FormBorderStyle = FormBorderStyle.None
