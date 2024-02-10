@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "71NpEil3ZHSW7SkX6TgWZxQVPVwogUilAbpjZmggTLxFHt5SiqDk0nPW7Llp21JLKhVcj/YEG1RFJrMMvaMc+A==",
+  "dgSpecHash": "+hP1EG7plEY3j3iyYVAyIccnhni/Wo0DZuX2/fB7dwtZSoVxCtJjVhBeSgbQhcT2ueprKPT3FiUs7SdnAWkbGg==",
   "success": true,
-  "projectFilePath": "E:\\Medical Store Management System\\Medical Store Management System\\Medical Store Management.vbproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "E:\\Medical Store Management System1\\Medical Store Management.vbproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jaygh\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.6\\guna.ui2.winforms.2.0.4.6.nupkg.sha512",
+    "C:\\Users\\jaygh\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\jaygh\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
+    "C:\\Users\\jaygh\\.nuget\\packages\\system.data.oledb\\8.0.0\\system.data.oledb.8.0.0.nupkg.sha512",
+    "C:\\Users\\jaygh\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.0\\system.diagnostics.eventlog.8.0.0.nupkg.sha512",
+    "C:\\Users\\jaygh\\.nuget\\packages\\system.diagnostics.performancecounter\\8.0.0\\system.diagnostics.performancecounter.8.0.0.nupkg.sha512",
+    "C:\\Users\\jaygh\\.nuget\\packages\\system.management\\7.0.0\\system.management.7.0.0.nupkg.sha512",
+    "C:\\Users\\jaygh\\.nuget\\packages\\system.security.cryptography.protecteddata\\8.0.0\\system.security.cryptography.protecteddata.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
