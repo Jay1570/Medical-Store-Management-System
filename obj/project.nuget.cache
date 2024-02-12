@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+hP1EG7plEY3j3iyYVAyIccnhni/Wo0DZuX2/fB7dwtZSoVxCtJjVhBeSgbQhcT2ueprKPT3FiUs7SdnAWkbGg==",
+  "dgSpecHash": "vjF9V8UhrTvppYn8t32MIQZ+KKs27rgVhFMFT6xT1QvzVAfv1yg9/BGM/G7TkXlGGRFeaBUOlyzdQK+qmisRiA==",
   "success": true,
-  "projectFilePath": "E:\\Medical Store Management System1\\Medical Store Management.vbproj",
+  "projectFilePath": "E:\\Medical Store Management System\\Medical Store Management.vbproj",
   "expectedPackageFiles": [
     "C:\\Users\\jaygh\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.6\\guna.ui2.winforms.2.0.4.6.nupkg.sha512",
     "C:\\Users\\jaygh\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
