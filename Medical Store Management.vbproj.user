@@ -10,10 +10,16 @@
     <Compile Update="formSplash.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmInsertDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmOverView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmSearchDialog.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

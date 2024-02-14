@@ -1,4 +1,5 @@
-﻿Imports System.ComponentModel
+﻿Imports System.Buffers
+Imports System.ComponentModel
 Imports System.Data.OleDb
 
 Public Class frmEmployee
@@ -11,50 +12,52 @@ Public Class frmEmployee
     Private Sub frmEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
-        conn.Open()
         showdata()
 
     End Sub
 
     Sub showdata()
 
+        conn.Open()
         ds.Clear()
-        adp = New OleDbDataAdapter("SELECT * FROM Employee", conn)
+        adp = New OleDbDataAdapter("SELECT Emp_UserName,Emp_Name,Emp_Salary,Emp_Type FROM Employee", conn)
         adp.Fill(ds, "Employee")
         dgvEmployee.DataSource = ds.Tables("Employee")
-
-    End Sub
-
-    Private Sub frmEmployee_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
         conn.Close()
+
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
 
-        Try
+        Dim insert As New frmInsertDialog()
+        If insert.ShowDialog() = DialogResult.OK Then
+            Dim query As String = insert.query
+            Try
+                conn.Open()
+                cmd = New OleDbCommand(query, conn)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Employee data inserted successfully!")
+                conn.Close()
+                showdata()
 
-            Dim query As String = "INSERT INTO Employee(Emp_Name,Emp_UserName,Emp_password,Emp_Salary,Emp_Type) VALUES('" & txtName.Text & "','" & txtUsername.Text & "','" & txtPassword.Text & "'," & txtSalary.Text & ",'" & txtType.Text & "')"
-            cmd = New OleDbCommand(query, conn)
-            cmd.ExecuteNonQuery()
-            MessageBox.Show("Employee data inserted successfully!")
-            showdata()
+            Catch ex As Exception
 
-        Catch ex As Exception
+                MessageBox.Show("Error inserting employee data: " & ex.Message)
 
-            MessageBox.Show("Error inserting employee data: " & ex.Message)
-
-        End Try
-
+            End Try
+        End If
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
 
         Try
 
+            conn.Open()
             Dim query As String = "UPDATE Employee SET Emp_Name='" & txtName.Text & "', Emp_UserName='" & txtUsername.Text & "', Emp_password='" & txtPassword.Text & "', Emp_Salary=" & txtSalary.Text & ", Emp_Type='" & txtType.Text & "' WHERE Emp_Id=" & txtId.Text & ""
             cmd = New OleDbCommand(query, conn)
             cmd.ExecuteNonQuery()
             MessageBox.Show("Employee data Updated successfully!")
+            conn.Close()
             showdata()
 
         Catch ex As Exception
@@ -69,10 +72,12 @@ Public Class frmEmployee
 
         Try
 
+            conn.Open()
             Dim query As String = "DELETE FROM Employee  WHERE Emp_Id=" & txtId.Text & ""
             cmd = New OleDbCommand(query, conn)
             cmd.ExecuteNonQuery()
             MessageBox.Show("Employee data Deleted successfully!")
+            conn.Close()
             showdata()
 
         Catch ex As Exception
@@ -81,23 +86,43 @@ Public Class frmEmployee
 
         End Try
 
+
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
 
-        Try
+        Dim search As New frmSearchDialog()
+        If search.ShowDialog() = DialogResult.OK Then
+            Dim selectedFields As List(Of String) = search.SelectedFields
+            Dim searchValues As List(Of String) = search.SearchValues
+            Dim comparativeOperator As String = search.ComparativeOperators
 
-            Dim query As String = "SELECT * FROM Employee WHERE Emp_Id=" & txtId.Text & ""
-            ds.Clear()
-            adp = New OleDbDataAdapter(query, conn)
-            adp.Fill(ds, "Employee")
-            dgvEmployee.DataSource = ds.Tables("Employee")
+            Try
 
-        Catch ex As Exception
+                conn.Open()
+                Dim query As String = "SELECT * FROM Employee WHERE "
+                For i As Integer = 0 To selectedFields.Count - 1
+                    If selectedFields(i).Contains("Emp_Salary") Then
+                        query &= selectedFields(i) & " " & comparativeOperator & " " & searchValues(i) & " "
+                    Else
+                        query &= selectedFields(i) & " = " & "'" & searchValues(i) & "' "
+                    End If
+                    If i < selectedFields.Count - 1 Then
+                        query &= " AND "
+                    End If
+                Next
+                ds.Clear()
+                adp = New OleDbDataAdapter(query, conn)
+                adp.Fill(ds, "Employee")
+                dgvEmployee.DataSource = ds.Tables("Employee")
+                conn.Close()
 
-            MessageBox.Show("Error Displaying employee data: " & ex.Message)
+            Catch ex As Exception
 
-        End Try
+                MessageBox.Show("Error Displaying employee data: " & ex.Message)
+
+            End Try
+        End If
 
     End Sub
 
@@ -106,4 +131,5 @@ Public Class frmEmployee
         showdata()
 
     End Sub
+
 End Class
