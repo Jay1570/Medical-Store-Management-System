@@ -8,22 +8,26 @@ Public Class frmEmployee
     Dim cmd As New OleDbCommand
     Dim ds As New DataSet
     Dim adp As New OleDbDataAdapter
+    Dim fields As New List(Of String)
 
     Private Sub frmEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
         showdata()
+        fields.Add("Emp_Name")
+        fields.Add("Emp_UserName")
+        fields.Add("Emp_Password")
+        fields.Add("Emp_Salary")
+        fields.Add("Emp_Type")
 
     End Sub
 
     Sub showdata()
 
-        conn.Open()
         ds.Clear()
         adp = New OleDbDataAdapter("SELECT Emp_UserName,Emp_Name,Emp_Salary,Emp_Type FROM Employee", conn)
         adp.Fill(ds, "Employee")
         dgvEmployee.DataSource = ds.Tables("Employee")
-        conn.Close()
 
     End Sub
 
@@ -91,7 +95,7 @@ Public Class frmEmployee
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
 
-        Dim search As New frmSearchDialog()
+        Dim search As New frmSearchDialog(fields)
         If search.ShowDialog() = DialogResult.OK Then
             Dim selectedFields As List(Of String) = search.SelectedFields
             Dim searchValues As List(Of String) = search.SearchValues
@@ -99,8 +103,7 @@ Public Class frmEmployee
 
             Try
 
-                conn.Open()
-                Dim query As String = "SELECT * FROM Employee WHERE "
+                Dim query As String = "SELECT Emp_UserName,Emp_Name,Emp_Salary,Emp_Type FROM Employee WHERE "
                 For i As Integer = 0 To selectedFields.Count - 1
                     If selectedFields(i).Contains("Emp_Salary") Then
                         query &= selectedFields(i) & " " & comparativeOperator & " " & searchValues(i) & " "
@@ -115,7 +118,6 @@ Public Class frmEmployee
                 adp = New OleDbDataAdapter(query, conn)
                 adp.Fill(ds, "Employee")
                 dgvEmployee.DataSource = ds.Tables("Employee")
-                conn.Close()
 
             Catch ex As Exception
 
