@@ -1,8 +1,7 @@
-﻿Public Class frmSearchDialog
+﻿Public Class frmDeleteDialog
 
     Public Property SelectedFields As New List(Of String)
-    Public Property SearchValues As New List(Of String)
-    Public Property ComparativeOperators As String
+    Public Property DeleteValues As New List(Of String)
 
     Public Sub New(ByVal fieldsList As List(Of String))
 
@@ -38,26 +37,21 @@
             txtBox.Size = New Size(100, 30)
             fieldPanel.Controls.Add(txtBox)
 
-            If field = "Salary" Or field = "Price" Or field = "Stock" Then
-
-                Dim comboBox As New ComboBox()
-                comboBox.Name = "cmb" & field
-                comboBox.Items.AddRange({"=", ">", "<", ">=", "<=", "<>"})
-                comboBox.Enabled = False
-                comboBox.SelectedValue = "="
-                fieldPanel.Controls.Add(comboBox)
-
+            If fieldsList.Count = 1 Then
+                chkBox.Checked = True
+                txtBox.Enabled = True
             End If
+
             FlowLayoutPanel1.Controls.Add(fieldPanel)
 
         Next
+
     End Sub
 
     Private Sub CheckBox_CheckedChanged(sender As Object, e As EventArgs)
 
         Dim checkbox As CheckBox = DirectCast(sender, CheckBox)
         Dim relatedTextBox As String = "txt" & checkbox.Text
-        Dim relatedCombo As String = "cmb" & checkbox.Text
 
         For Each fieldPanel As Control In FlowLayoutPanel1.Controls
 
@@ -69,11 +63,6 @@
                         ctrl.Enabled = checkbox.Checked
                     End If
 
-                    If TypeOf ctrl Is ComboBox AndAlso ctrl.Name = relatedCombo Then
-                        ctrl.Enabled = checkbox.Checked
-                        DirectCast(ctrl, ComboBox).SelectedItem = "="
-                    End If
-
                 Next
 
             End If
@@ -82,10 +71,10 @@
 
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
 
         SelectedFields.Clear()
-        SearchValues.Clear()
+        DeleteValues.Clear()
         For Each fieldPanel As Control In FlowLayoutPanel1.Controls
 
             If TypeOf fieldPanel Is FlowLayoutPanel Then
@@ -93,18 +82,14 @@
                 For Each ctrl As Control In fieldPanel.Controls
 
                     If TypeOf ctrl Is CheckBox AndAlso DirectCast(ctrl, CheckBox).Checked Then
+
                         SelectedFields.Add(DirectCast(ctrl, CheckBox).Text)
                         Dim relatedTextBox As String = "txt" & DirectCast(ctrl, CheckBox).Text.ToString()
-                        Dim relatedCombo As String = "cmb" & DirectCast(ctrl, CheckBox).Text.ToString()
 
                         For Each txt As Control In fieldPanel.Controls
 
                             If TypeOf txt Is TextBox AndAlso txt.Name = relatedTextBox Then
-                                SearchValues.Add(txt.Text)
-                            End If
-
-                            If TypeOf txt Is ComboBox AndAlso txt.Name = relatedCombo Then
-                                ComparativeOperators = DirectCast(txt, ComboBox).SelectedItem
+                                DeleteValues.Add(txt.Text)
                             End If
 
                         Next

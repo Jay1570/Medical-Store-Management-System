@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmInsertDialog
+Partial Class frmDeleteDialog
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,20 +23,30 @@ Partial Class frmInsertDialog
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         FlowLayoutPanel1 = New FlowLayoutPanel()
-        btnCancel = New Button()
-        btnInsert = New Button()
         Panel1 = New Panel()
+        btnCancel = New Button()
+        btnDelete = New Button()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' FlowLayoutPanel1
         ' 
-        FlowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink
         FlowLayoutPanel1.Dock = DockStyle.Top
         FlowLayoutPanel1.Location = New Point(0, 0)
         FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(581, 323)
-        FlowLayoutPanel1.TabIndex = 12
+        FlowLayoutPanel1.Size = New Size(517, 371)
+        FlowLayoutPanel1.TabIndex = 13
+        ' 
+        ' Panel1
+        ' 
+        Panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        Panel1.Controls.Add(btnCancel)
+        Panel1.Controls.Add(btnDelete)
+        Panel1.Dock = DockStyle.Bottom
+        Panel1.Location = New Point(0, 377)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(517, 57)
+        Panel1.TabIndex = 15
         ' 
         ' btnCancel
         ' 
@@ -47,41 +57,30 @@ Partial Class frmInsertDialog
         btnCancel.Text = "Cancel"
         btnCancel.UseVisualStyleBackColor = True
         ' 
-        ' btnInsert
+        ' btnDelete
         ' 
-        btnInsert.Location = New Point(161, 9)
-        btnInsert.Name = "btnInsert"
-        btnInsert.Size = New Size(112, 40)
-        btnInsert.TabIndex = 11
-        btnInsert.Text = "Insert"
-        btnInsert.UseVisualStyleBackColor = True
+        btnDelete.Location = New Point(161, 9)
+        btnDelete.Name = "btnDelete"
+        btnDelete.Size = New Size(112, 40)
+        btnDelete.TabIndex = 11
+        btnDelete.Text = "Delete"
+        btnDelete.UseVisualStyleBackColor = True
         ' 
-        ' Panel1
+        ' frmDeleteDialog
         ' 
-        Panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        Panel1.Controls.Add(btnCancel)
-        Panel1.Controls.Add(btnInsert)
-        Panel1.Dock = DockStyle.Bottom
-        Panel1.Location = New Point(0, 390)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(581, 52)
-        Panel1.TabIndex = 13
-        ' 
-        ' frmInsertDialog
-        ' 
-        AutoScaleDimensions = New SizeF(144F, 144F)
-        AutoScaleMode = AutoScaleMode.Dpi
-        ClientSize = New Size(581, 442)
+        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(517, 434)
         Controls.Add(Panel1)
         Controls.Add(FlowLayoutPanel1)
-        Name = "frmInsertDialog"
-        Text = "frmInsertDialog"
+        Name = "frmDeleteDialog"
+        Text = "frmDeleteDialog"
         Panel1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents btnCancel As Button
-    Friend WithEvents btnInsert As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnCancel As Button
+    Friend WithEvents btnDelete As Button
 End Class

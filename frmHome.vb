@@ -86,10 +86,25 @@ Public Class frmHome
 
     End Sub
 
-    Private Sub frmHome_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+    Private Sub btnProducts_Click(sender As Object, e As EventArgs) Handles btnProducts.Click
+
+        With frmProducts
+
+            .TopLevel = False
+            Panel3.Controls.Add(frmProducts)
+            .BringToFront()
+            .Show()
+
+        End With
+
+    End Sub
+
+    Private Sub frmHome_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
 
         frmOverView.Close()
         frmEmployee.Close()
+        frmProducts.Close()
 
     End Sub
+
 End Class

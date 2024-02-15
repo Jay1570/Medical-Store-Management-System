@@ -29,18 +29,18 @@ Partial Class frmSearchDialog
         ' 
         ' btnSearch
         ' 
-        btnSearch.Location = New Point(174, 537)
+        btnSearch.Location = New Point(175, 540)
         btnSearch.Name = "btnSearch"
-        btnSearch.Size = New Size(112, 50)
+        btnSearch.Size = New Size(112, 40)
         btnSearch.TabIndex = 9
         btnSearch.Text = "Search"
         btnSearch.UseVisualStyleBackColor = True
         ' 
         ' btnCancel
         ' 
-        btnCancel.Location = New Point(329, 537)
+        btnCancel.Location = New Point(326, 540)
         btnCancel.Name = "btnCancel"
-        btnCancel.Size = New Size(112, 50)
+        btnCancel.Size = New Size(112, 40)
         btnCancel.TabIndex = 10
         btnCancel.Text = "Cancel"
         btnCancel.UseVisualStyleBackColor = True

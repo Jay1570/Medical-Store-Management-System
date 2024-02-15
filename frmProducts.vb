@@ -1,7 +1,6 @@
-﻿
-Imports System.Data.OleDb
+﻿Imports System.Data.OleDb
 
-Public Class frmEmployee
+Public Class frmProducts
 
     Dim conn As New OleDbConnection
     Dim cmd As New OleDbCommand
@@ -11,24 +10,23 @@ Public Class frmEmployee
     Dim selectedFields As New List(Of String)
     Dim values As New List(Of String)
 
-    Private Sub frmEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmProducts_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
         showdata()
         fields.Add("Name")
-        fields.Add("Username")
-        fields.Add("Password")
-        fields.Add("Salary")
-        fields.Add("Designation")
+        fields.Add("Category")
+        fields.Add("Price")
+        fields.Add("Stock")
 
     End Sub
 
     Sub showdata()
 
         ds.Clear()
-        adp = New OleDbDataAdapter("SELECT Username,[Name],Salary,Designation FROM Employee", conn)
-        adp.Fill(ds, "Employee")
-        dgvEmployee.DataSource = ds.Tables("Employee")
+        adp = New OleDbDataAdapter("SELECT [Name],Category,Price,Stock FROM Products", conn)
+        adp.Fill(ds, "Products")
+        dgvProducts.DataSource = ds.Tables("Products")
 
     End Sub
 
@@ -36,7 +34,7 @@ Public Class frmEmployee
 
         Dim insert As New frmInsertDialog(fields)
         If insert.ShowDialog() = DialogResult.OK Then
-            Dim query As String = "INSERT INTO Employee([Name],Username,[Password],Salary,Designation) VALUES ("
+            Dim query As String = "INSERT INTO Products([Name],Category,Price,Stock) VALUES ("
             values.Clear()
             values = insert.InsertValues
             Try
@@ -50,14 +48,14 @@ Public Class frmEmployee
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Employee data inserted successfully!")
+                MessageBox.Show("Product data inserted successfully!")
                 conn.Close()
                 showdata()
 
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error inserting employee data: " & ex.Message)
+                MessageBox.Show("Error inserting Product data: " & ex.Message)
 
             End Try
 
@@ -67,9 +65,9 @@ Public Class frmEmployee
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
 
-        Dim update As New frmUpdateDialog(fields, "Username")
+        Dim update As New frmUpdateDialog(fields, "Name")
         If update.ShowDialog() = DialogResult.OK Then
-            Dim query As String = "UPDATE Employee SET "
+            Dim query As String = "UPDATE Products SET "
             values.Clear()
             selectedFields.Clear()
             selectedFields = update.SelectedFields
@@ -77,7 +75,7 @@ Public Class frmEmployee
             Dim where As String = update.whereValue
             Try
                 For i As Integer = 0 To selectedFields.Count - 1
-                    If selectedFields(i).Contains("Salary") Then
+                    If selectedFields(i).Contains("Price") Or selectedFields(i).Contains("Stock") Then
                         query &= selectedFields(i) & " = " & values(i) & " "
                     Else
                         query &= selectedFields(i) & " = " & "'" & values(i) & "' "
@@ -88,14 +86,14 @@ Public Class frmEmployee
                     End If
 
                 Next
-                query &= " WHERE Username = @Username"
+                query &= " WHERE Name = @name"
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
-                cmd.Parameters.AddWithValue("@Username", where)
+                cmd.Parameters.AddWithValue("@name", where)
                 Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
                 conn.Close()
                 If rowsAffected > 0 Then
-                    MessageBox.Show("Employee data updated successfully!")
+                    MessageBox.Show("Product data updated successfully!")
                     showdata()
                 Else
                     MessageBox.Show("No records were updated.")
@@ -104,7 +102,7 @@ Public Class frmEmployee
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error Updating employee data: " & ex.Message)
+                MessageBox.Show("Error Updating Product data: " & ex.Message)
 
             End Try
 
@@ -118,7 +116,7 @@ Public Class frmEmployee
         If delete.ShowDialog() = DialogResult.OK Then
             values.Clear()
             selectedFields.Clear()
-            Dim query As String = "DELETE FROM Employee WHERE "
+            Dim query As String = "DELETE FROM Products WHERE "
             selectedFields = delete.SelectedFields
             values = delete.DeleteValues
             Try
@@ -135,14 +133,14 @@ Public Class frmEmployee
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Employee data Deleted successfully!")
+                MessageBox.Show("Product data Deleted successfully!")
                 conn.Close()
                 showdata()
 
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error Deleting employee data: " & ex.Message)
+                MessageBox.Show("Error Deleting Product data: " & ex.Message)
 
             End Try
 
@@ -164,9 +162,9 @@ Public Class frmEmployee
 
             Try
 
-                Dim query As String = "SELECT Username,[Name],Salary,Designation FROM Employee WHERE "
+                Dim query As String = "SELECT [Name],Category,Price,Stock FROM Products WHERE "
                 For i As Integer = 0 To selectedFields.Count - 1
-                    If selectedFields(i).Contains("Salary") Then
+                    If selectedFields(i).Contains("Price") Or selectedFields(i).Contains("Stock") Then
                         query &= selectedFields(i) & " " & comparativeOperator & " " & values(i) & " "
                     Else
                         query &= selectedFields(i) & " = " & "'" & values(i) & "' "
@@ -177,13 +175,13 @@ Public Class frmEmployee
                 Next
                 ds.Clear()
                 adp = New OleDbDataAdapter(query, conn)
-                adp.Fill(ds, "Employee")
-                dgvEmployee.DataSource = ds.Tables("Employee")
+                adp.Fill(ds, "Products")
+                dgvProducts.DataSource = ds.Tables("Products")
 
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error Displaying employee data: " & ex.Message)
+                MessageBox.Show("Error Displaying Product data: " & ex.Message)
 
             End Try
         End If

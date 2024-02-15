@@ -118,3 +118,6 @@ E:\Medical Store Management System\obj\Debug\net8.0-windows7.0\Medical Store Man
 E:\Medical Store Management System\obj\Debug\net8.0-windows7.0\ref\Medical Store Management.dll
 E:\Medical Store Management System\obj\Debug\net8.0-windows7.0\Medical_Store_Management.frmSearchDialog.resources
 E:\Medical Store Management System\obj\Debug\net8.0-windows7.0\Medical_Store_Management.frmInsertDialog.resources
+E:\Medical Store Management System\obj\Debug\net8.0-windows7.0\Medical_Store_Management.frmUpdateDialog.resources
+E:\Medical Store Management System\obj\Debug\net8.0-windows7.0\Medical_Store_Management.frmDeleteDialog.resources
+E:\Medical Store Management System\obj\Debug\net8.0-windows7.0\Medical_Store_Management.frmProducts.resources

@@ -1,12 +1,15 @@
-﻿Public Class frmSearchDialog
+﻿Public Class frmUpdateDialog
 
     Public Property SelectedFields As New List(Of String)
-    Public Property SearchValues As New List(Of String)
-    Public Property ComparativeOperators As String
+    Public Property UpdateValues As New List(Of String)
+    Public Property whereValue As String
+    Dim whereToUpdate As String
 
-    Public Sub New(ByVal fieldsList As List(Of String))
+    Public Sub New(ByVal fieldsList As List(Of String), ByVal where As String)
 
         InitializeComponent()
+
+        whereToUpdate = where
 
         Me.AutoSize = True
         Me.AutoSizeMode = AutoSizeMode.GrowOnly
@@ -16,10 +19,6 @@
 
 
         For Each field As String In fieldsList
-
-            If field = "Password" Then
-                Continue For
-            End If
 
             Dim fieldPanel As New FlowLayoutPanel()
             fieldPanel.AutoSize = True
@@ -38,26 +37,35 @@
             txtBox.Size = New Size(100, 30)
             fieldPanel.Controls.Add(txtBox)
 
-            If field = "Salary" Or field = "Price" Or field = "Stock" Then
-
-                Dim comboBox As New ComboBox()
-                comboBox.Name = "cmb" & field
-                comboBox.Items.AddRange({"=", ">", "<", ">=", "<=", "<>"})
-                comboBox.Enabled = False
-                comboBox.SelectedValue = "="
-                fieldPanel.Controls.Add(comboBox)
-
-            End If
             FlowLayoutPanel1.Controls.Add(fieldPanel)
 
         Next
+
+        Dim fieldUpdate As New FlowLayoutPanel()
+        fieldUpdate.AutoSize = True
+        fieldUpdate.FlowDirection = FlowDirection.LeftToRight
+
+        Dim label As New Label()
+        label.Text = "Old " & where
+        label.Size = New Size(150, 30)
+        label.TextAlign = ContentAlignment.MiddleCenter
+        fieldUpdate.Controls.Add(label)
+
+        Dim txtBox1 As New TextBox()
+        txtBox1.Name = "txtOld" & whereToUpdate
+        txtBox1.Enabled = True
+        txtBox1.Visible = True
+        txtBox1.Size = New Size(100, 30)
+        fieldUpdate.Controls.Add(txtBox1)
+
+        FlowLayoutPanel1.Controls.Add(fieldUpdate)
+
     End Sub
 
     Private Sub CheckBox_CheckedChanged(sender As Object, e As EventArgs)
 
         Dim checkbox As CheckBox = DirectCast(sender, CheckBox)
         Dim relatedTextBox As String = "txt" & checkbox.Text
-        Dim relatedCombo As String = "cmb" & checkbox.Text
 
         For Each fieldPanel As Control In FlowLayoutPanel1.Controls
 
@@ -69,11 +77,6 @@
                         ctrl.Enabled = checkbox.Checked
                     End If
 
-                    If TypeOf ctrl Is ComboBox AndAlso ctrl.Name = relatedCombo Then
-                        ctrl.Enabled = checkbox.Checked
-                        DirectCast(ctrl, ComboBox).SelectedItem = "="
-                    End If
-
                 Next
 
             End If
@@ -82,10 +85,10 @@
 
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
 
         SelectedFields.Clear()
-        SearchValues.Clear()
+        UpdateValues.Clear()
         For Each fieldPanel As Control In FlowLayoutPanel1.Controls
 
             If TypeOf fieldPanel Is FlowLayoutPanel Then
@@ -95,20 +98,18 @@
                     If TypeOf ctrl Is CheckBox AndAlso DirectCast(ctrl, CheckBox).Checked Then
                         SelectedFields.Add(DirectCast(ctrl, CheckBox).Text)
                         Dim relatedTextBox As String = "txt" & DirectCast(ctrl, CheckBox).Text.ToString()
-                        Dim relatedCombo As String = "cmb" & DirectCast(ctrl, CheckBox).Text.ToString()
 
                         For Each txt As Control In fieldPanel.Controls
 
                             If TypeOf txt Is TextBox AndAlso txt.Name = relatedTextBox Then
-                                SearchValues.Add(txt.Text)
-                            End If
-
-                            If TypeOf txt Is ComboBox AndAlso txt.Name = relatedCombo Then
-                                ComparativeOperators = DirectCast(txt, ComboBox).SelectedItem
+                                UpdateValues.Add(txt.Text)
                             End If
 
                         Next
 
+                    End If
+                    If TypeOf ctrl Is TextBox AndAlso ctrl.Name = "txtOld" & whereToUpdate Then
+                        whereValue = ctrl.Text
                     End If
 
                 Next
