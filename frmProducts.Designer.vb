@@ -31,6 +31,7 @@ Partial Class frmProducts
         btnSearch = New Button()
         btnDelete = New Button()
         dgvProducts = New DataGridView()
+        Label1 = New Label()
         Panel1.SuspendLayout()
         CType(dgvProducts, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -43,9 +44,9 @@ Partial Class frmProducts
         Panel1.Controls.Add(btnSearch)
         Panel1.Controls.Add(btnDelete)
         Panel1.Dock = DockStyle.Bottom
-        Panel1.Location = New Point(0, 700)
+        Panel1.Location = New Point(10, 690)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1050, 50)
+        Panel1.Size = New Size(1030, 50)
         Panel1.TabIndex = 15
         ' 
         ' btnAdd
@@ -115,22 +116,36 @@ Partial Class frmProducts
         DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
         dgvProducts.DefaultCellStyle = DataGridViewCellStyle2
-        dgvProducts.Dock = DockStyle.Top
-        dgvProducts.Location = New Point(0, 0)
+        dgvProducts.Location = New Point(10, 60)
         dgvProducts.Name = "dgvProducts"
+        dgvProducts.RowHeadersVisible = False
         dgvProducts.RowHeadersWidth = 62
-        dgvProducts.Size = New Size(1050, 700)
+        dgvProducts.Size = New Size(1030, 630)
         dgvProducts.TabIndex = 14
+        ' 
+        ' Label1
+        ' 
+        Label1.BackColor = Color.White
+        Label1.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = SystemColors.MenuHighlight
+        Label1.Location = New Point(10, 10)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(186, 45)
+        Label1.TabIndex = 16
+        Label1.Text = "Products"
         ' 
         ' frmProducts
         ' 
         AutoScaleDimensions = New SizeF(144F, 144F)
         AutoScaleMode = AutoScaleMode.Dpi
+        BackColor = Color.White
         ClientSize = New Size(1050, 750)
+        Controls.Add(Label1)
         Controls.Add(Panel1)
         Controls.Add(dgvProducts)
         FormBorderStyle = FormBorderStyle.None
         Name = "frmProducts"
+        Padding = New Padding(10)
         Text = "frmProducts"
         Panel1.ResumeLayout(False)
         CType(dgvProducts, ComponentModel.ISupportInitialize).EndInit()
@@ -144,4 +159,5 @@ Partial Class frmProducts
     Friend WithEvents btnSearch As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents dgvProducts As DataGridView
+    Friend WithEvents Label1 As Label
 End Class

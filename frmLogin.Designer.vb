@@ -166,6 +166,7 @@ Partial Class frmLogin
         AcceptButton = OK
         AutoScaleDimensions = New SizeF(144F, 144F)
         AutoScaleMode = AutoScaleMode.Dpi
+        AutoSizeMode = AutoSizeMode.GrowAndShrink
         BackColor = SystemColors.MenuHighlight
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         ClientSize = New Size(500, 500)

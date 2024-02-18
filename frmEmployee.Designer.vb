@@ -24,45 +24,17 @@ Partial Class frmEmployee
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        dgvEmployee = New DataGridView()
         btnAdd = New Button()
         btnUpdate = New Button()
         btnDelete = New Button()
         btnSearch = New Button()
         btnShowAll = New Button()
         Panel1 = New Panel()
-        CType(dgvEmployee, ComponentModel.ISupportInitialize).BeginInit()
+        Label1 = New Label()
+        dgvEmployee = New DataGridView()
         Panel1.SuspendLayout()
+        CType(dgvEmployee, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' dgvEmployee
-        ' 
-        dgvEmployee.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        dgvEmployee.BackgroundColor = Color.White
-        dgvEmployee.BorderStyle = BorderStyle.None
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = SystemColors.MenuHighlight
-        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F)
-        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
-        dgvEmployee.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        dgvEmployee.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = SystemColors.Window
-        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F)
-        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
-        dgvEmployee.DefaultCellStyle = DataGridViewCellStyle2
-        dgvEmployee.Dock = DockStyle.Top
-        dgvEmployee.Location = New Point(0, 0)
-        dgvEmployee.Name = "dgvEmployee"
-        dgvEmployee.RowHeadersWidth = 62
-        dgvEmployee.Size = New Size(1050, 700)
-        dgvEmployee.TabIndex = 0
         ' 
         ' btnAdd
         ' 
@@ -111,29 +83,73 @@ Partial Class frmEmployee
         ' 
         ' Panel1
         ' 
+        Panel1.BackColor = Color.White
         Panel1.Controls.Add(btnAdd)
         Panel1.Controls.Add(btnShowAll)
         Panel1.Controls.Add(btnUpdate)
         Panel1.Controls.Add(btnSearch)
         Panel1.Controls.Add(btnDelete)
         Panel1.Dock = DockStyle.Bottom
-        Panel1.Location = New Point(0, 700)
+        Panel1.Location = New Point(10, 690)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1050, 50)
+        Panel1.Size = New Size(1030, 50)
         Panel1.TabIndex = 13
+        ' 
+        ' Label1
+        ' 
+        Label1.BackColor = Color.White
+        Label1.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = SystemColors.MenuHighlight
+        Label1.Location = New Point(10, 10)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(182, 45)
+        Label1.TabIndex = 14
+        Label1.Text = "Employee"
+        ' 
+        ' dgvEmployee
+        ' 
+        dgvEmployee.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvEmployee.BackgroundColor = Color.White
+        dgvEmployee.BorderStyle = BorderStyle.None
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = SystemColors.MenuHighlight
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        dgvEmployee.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        dgvEmployee.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = SystemColors.Window
+        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F)
+        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
+        dgvEmployee.DefaultCellStyle = DataGridViewCellStyle2
+        dgvEmployee.Location = New Point(10, 60)
+        dgvEmployee.Name = "dgvEmployee"
+        dgvEmployee.RowHeadersVisible = False
+        dgvEmployee.RowHeadersWidth = 62
+        dgvEmployee.Size = New Size(1030, 630)
+        dgvEmployee.TabIndex = 0
         ' 
         ' frmEmployee
         ' 
         AutoScaleDimensions = New SizeF(144F, 144F)
         AutoScaleMode = AutoScaleMode.Dpi
+        BackColor = Color.White
         ClientSize = New Size(1050, 750)
+        Controls.Add(Label1)
         Controls.Add(Panel1)
         Controls.Add(dgvEmployee)
         FormBorderStyle = FormBorderStyle.None
         Name = "frmEmployee"
+        Padding = New Padding(10)
         Text = "frmEmployee"
-        CType(dgvEmployee, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
+        CType(dgvEmployee, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -144,4 +160,5 @@ Partial Class frmEmployee
     Friend WithEvents btnSearch As Button
     Friend WithEvents btnShowAll As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label1 As Label
 End Class

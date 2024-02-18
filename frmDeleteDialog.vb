@@ -16,7 +16,7 @@
 
         For Each field As String In fieldsList
 
-            If field = "Password" Then
+            If field = "Password" Or field = "City" Or field = "Stock" Or field = "Price" Or field = "Salary" Then
                 Continue For
             End If
 

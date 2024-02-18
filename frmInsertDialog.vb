@@ -16,6 +16,10 @@ Public Class frmInsertDialog
 
         For Each field As String In fieldsList
 
+            If field = "Stock" Then
+                Continue For
+            End If
+
             Dim fieldPanel As New FlowLayoutPanel()
             fieldPanel.AutoSize = True
             fieldPanel.FlowDirection = FlowDirection.LeftToRight

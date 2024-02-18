@@ -24,7 +24,7 @@ Partial Class frmHome
     Private Sub InitializeComponent()
         Panel1 = New Panel()
         btnClose = New Button()
-        btnReports = New Button()
+        btnPurchase = New Button()
         btnSales = New Button()
         btnSupplier = New Button()
         btnProducts = New Button()
@@ -42,7 +42,7 @@ Partial Class frmHome
         ' 
         Panel1.BackColor = SystemColors.MenuHighlight
         Panel1.Controls.Add(btnClose)
-        Panel1.Controls.Add(btnReports)
+        Panel1.Controls.Add(btnPurchase)
         Panel1.Controls.Add(btnSales)
         Panel1.Controls.Add(btnSupplier)
         Panel1.Controls.Add(btnProducts)
@@ -74,22 +74,22 @@ Partial Class frmHome
         btnClose.TextAlign = ContentAlignment.MiddleLeft
         btnClose.UseVisualStyleBackColor = False
         ' 
-        ' btnReports
+        ' btnPurchase
         ' 
-        btnReports.BackColor = SystemColors.MenuHighlight
-        btnReports.Cursor = Cursors.Hand
-        btnReports.FlatAppearance.BorderSize = 0
-        btnReports.FlatStyle = FlatStyle.Flat
-        btnReports.Font = New Font("Segoe UI", 12F)
-        btnReports.ForeColor = Color.White
-        btnReports.Location = New Point(0, 484)
-        btnReports.Name = "btnReports"
-        btnReports.Padding = New Padding(10, 0, 0, 0)
-        btnReports.Size = New Size(250, 60)
-        btnReports.TabIndex = 8
-        btnReports.Text = "Reports"
-        btnReports.TextAlign = ContentAlignment.MiddleLeft
-        btnReports.UseVisualStyleBackColor = False
+        btnPurchase.BackColor = SystemColors.MenuHighlight
+        btnPurchase.Cursor = Cursors.Hand
+        btnPurchase.FlatAppearance.BorderSize = 0
+        btnPurchase.FlatStyle = FlatStyle.Flat
+        btnPurchase.Font = New Font("Segoe UI", 12F)
+        btnPurchase.ForeColor = Color.White
+        btnPurchase.Location = New Point(0, 484)
+        btnPurchase.Name = "btnPurchase"
+        btnPurchase.Padding = New Padding(10, 0, 0, 0)
+        btnPurchase.Size = New Size(250, 60)
+        btnPurchase.TabIndex = 8
+        btnPurchase.Text = "Purchase Orders"
+        btnPurchase.TextAlign = ContentAlignment.MiddleLeft
+        btnPurchase.UseVisualStyleBackColor = False
         ' 
         ' btnSales
         ' 
@@ -238,7 +238,7 @@ Partial Class frmHome
     Friend WithEvents btnOverView As Button
     Friend WithEvents btnProducts As Button
     Friend WithEvents btnEmployee As Button
-    Friend WithEvents btnReports As Button
+    Friend WithEvents btnPurchase As Button
     Friend WithEvents btnSales As Button
     Friend WithEvents btnSupplier As Button
     Friend WithEvents btnClose As Button

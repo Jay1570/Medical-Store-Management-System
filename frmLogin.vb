@@ -26,7 +26,7 @@ Public Class frmLogin
 
                 Dim empName As String = reader("Name").ToString()
                 Dim empType As String = reader("Designation").ToString()
-                Dim home As New frmHome(empName, empType)
+                Dim home As New frmHome()
                 conn.Close()
                 home.Show()
                 Close()

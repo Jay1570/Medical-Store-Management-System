@@ -10,7 +10,7 @@ Public Class frmProducts
     Dim selectedFields As New List(Of String)
     Dim values As New List(Of String)
 
-    Private Sub frmProducts_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub frmProducts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
         showdata()
@@ -34,7 +34,7 @@ Public Class frmProducts
 
         Dim insert As New frmInsertDialog(fields)
         If insert.ShowDialog() = DialogResult.OK Then
-            Dim query As String = "INSERT INTO Products([Name],Category,Price,Stock) VALUES ("
+            Dim query As String = "INSERT INTO Products([Name],Category,Price) VALUES ("
             values.Clear()
             values = insert.InsertValues
             Try
@@ -121,7 +121,7 @@ Public Class frmProducts
             values = delete.DeleteValues
             Try
                 For i As Integer = 0 To selectedFields.Count - 1
-                    If selectedFields(i).Contains("Salary") Then
+                    If selectedFields(i).Contains("Price") Or selectedFields(i).Contains("Stock") Then
                         query &= selectedFields(i) & " = " & values(i) & " "
                     Else
                         query &= selectedFields(i) & " = " & "'" & values(i) & "' "

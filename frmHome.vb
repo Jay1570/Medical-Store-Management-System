@@ -10,14 +10,6 @@ Public Class frmHome
     Dim adp As OleDbDataAdapter
     Dim ds As DataSet
 
-    Public Sub New(Optional ByVal empNM As String = "", Optional ByVal empTIPE As String = "")
-
-        InitializeComponent()
-        empName = empNM
-        empType = empTIPE
-
-    End Sub
-
     Private Sub frmHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.Activate()
@@ -42,18 +34,6 @@ Public Class frmHome
         'MessageBox.Show("Login Sucessfull!", "Successfull")
     End Sub
 
-    Private Sub btnOverView_MouseEnter(sender As Object, e As EventArgs) Handles btnOverView.MouseEnter, btnEmployee.MouseEnter, btnProducts.MouseEnter, btnReports.MouseEnter, btnSales.MouseEnter, btnSupplier.MouseEnter, btnClose.MouseEnter
-
-        sender.BackColor = Color.FromArgb(67, 83, 98)
-
-    End Sub
-
-    Private Sub btnOverView_MouseLeave(sender As Object, e As EventArgs) Handles btnOverView.MouseLeave, btnEmployee.MouseLeave, btnProducts.MouseLeave, btnSales.MouseLeave, btnReports.MouseLeave, btnSupplier.MouseLeave, btnClose.MouseLeave
-
-        sender.BackColor = Color.Transparent
-
-    End Sub
-
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
 
         Close()
@@ -71,6 +51,10 @@ Public Class frmHome
 
         End With
 
+        frmOverView.Close()
+        frmProducts.Close()
+        frmSupplier.Close()
+
     End Sub
 
     Private Sub btnOverView_Click(sender As Object, e As EventArgs) Handles btnOverView.Click
@@ -83,6 +67,10 @@ Public Class frmHome
             .Show()
 
         End With
+
+        frmEmployee.Close()
+        frmProducts.Close()
+        frmSupplier.Close()
 
     End Sub
 
@@ -97,9 +85,31 @@ Public Class frmHome
 
         End With
 
+        frmOverView.Close()
+        frmEmployee.Close()
+        frmSupplier.Close()
+
     End Sub
 
     Private Sub frmHome_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
+
+        frmOverView.Close()
+        frmEmployee.Close()
+        frmProducts.Close()
+        frmSupplier.Close()
+
+    End Sub
+
+    Private Sub btnSupplier_Click(sender As Object, e As EventArgs) Handles btnSupplier.Click
+
+        With frmSupplier
+
+            .TopLevel = False
+            Panel3.Controls.Add(frmSupplier)
+            .BringToFront()
+            .Show()
+
+        End With
 
         frmOverView.Close()
         frmEmployee.Close()
