@@ -8,6 +8,7 @@ Public Class frmLogin
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Focus()
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
 
     End Sub
@@ -27,12 +28,14 @@ Public Class frmLogin
                 Dim empName As String = reader("Name").ToString()
                 Dim empType As String = reader("Designation").ToString()
                 Dim home As New frmHome()
+                DialogResult = DialogResult.OK
                 conn.Close()
                 home.Show()
                 Close()
 
             Else
 
+                DialogResult = DialogResult.Cancel
                 MessageBox.Show("Invalid username or password.", "Error!")
                 'Dim home As New frmHome()
                 'home.Show()

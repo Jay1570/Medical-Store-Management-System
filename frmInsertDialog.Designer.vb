@@ -75,7 +75,7 @@ Partial Class frmInsertDialog
         Controls.Add(Panel1)
         Controls.Add(FlowLayoutPanel1)
         Name = "frmInsertDialog"
-        Text = "frmInsertDialog"
+        Text = "Insert Dialog"
         Panel1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub

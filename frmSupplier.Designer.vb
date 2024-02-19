@@ -24,6 +24,7 @@ Partial Class frmSupplier
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Label1 = New Label()
         dgvSupplier = New DataGridView()
         Panel1 = New Panel()
@@ -49,13 +50,18 @@ Partial Class frmSupplier
         ' 
         ' dgvSupplier
         ' 
+        dgvSupplier.AllowUserToAddRows = False
+        dgvSupplier.AllowUserToDeleteRows = False
+        dgvSupplier.AllowUserToResizeColumns = False
+        dgvSupplier.AllowUserToResizeRows = False
         dgvSupplier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvSupplier.BackgroundColor = Color.White
         dgvSupplier.BorderStyle = BorderStyle.None
+        dgvSupplier.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
         DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = SystemColors.MenuHighlight
+        DataGridViewCellStyle1.BackColor = Color.MidnightBlue
         DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F)
-        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.ForeColor = Color.White
         DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
@@ -71,6 +77,14 @@ Partial Class frmSupplier
         dgvSupplier.DefaultCellStyle = DataGridViewCellStyle2
         dgvSupplier.Location = New Point(10, 60)
         dgvSupplier.Name = "dgvSupplier"
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = SystemColors.Control
+        DataGridViewCellStyle3.Font = New Font("Segoe UI", 9F)
+        DataGridViewCellStyle3.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True
+        dgvSupplier.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         dgvSupplier.RowHeadersVisible = False
         dgvSupplier.RowHeadersWidth = 62
         dgvSupplier.Size = New Size(1030, 630)

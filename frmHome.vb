@@ -10,7 +10,7 @@ Public Class frmHome
     Dim adp As OleDbDataAdapter
     Dim ds As DataSet
 
-    Private Sub frmHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmHome_Load(sender As Object, e As EventArgs) Handles MyBase.Shown
 
         Me.Activate()
         Me.CenterToScreen()
@@ -54,6 +54,7 @@ Public Class frmHome
         frmOverView.Close()
         frmProducts.Close()
         frmSupplier.Close()
+        frmPurchase.Close()
 
     End Sub
 
@@ -71,6 +72,7 @@ Public Class frmHome
         frmEmployee.Close()
         frmProducts.Close()
         frmSupplier.Close()
+        frmPurchase.Close()
 
     End Sub
 
@@ -88,15 +90,7 @@ Public Class frmHome
         frmOverView.Close()
         frmEmployee.Close()
         frmSupplier.Close()
-
-    End Sub
-
-    Private Sub frmHome_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
-
-        frmOverView.Close()
-        frmEmployee.Close()
-        frmProducts.Close()
-        frmSupplier.Close()
+        frmPurchase.Close()
 
     End Sub
 
@@ -114,6 +108,35 @@ Public Class frmHome
         frmOverView.Close()
         frmEmployee.Close()
         frmProducts.Close()
+        frmPurchase.Close()
+
+    End Sub
+
+    Private Sub btnPurchase_Click(sender As Object, e As EventArgs) Handles btnPurchase.Click
+
+        With frmPurchase
+
+            .TopLevel = False
+            Panel3.Controls.Add(frmPurchase)
+            .BringToFront()
+            .Show()
+
+        End With
+
+        frmOverView.Close()
+        frmEmployee.Close()
+        frmProducts.Close()
+        frmSupplier.Close()
+
+    End Sub
+
+    Private Sub frmHome_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
+
+        frmOverView.Close()
+        frmEmployee.Close()
+        frmProducts.Close()
+        frmSupplier.Close()
+        frmPurchase.Close()
 
     End Sub
 

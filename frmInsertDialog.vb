@@ -2,7 +2,6 @@
 
 Public Class frmInsertDialog
 
-    Public Property query As String
     Public Property InsertValues As New List(Of String)
     Public Sub New(ByVal fieldsList As List(Of String))
 
