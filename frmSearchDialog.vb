@@ -38,7 +38,7 @@
             txtBox.Size = New Size(100, 30)
             fieldPanel.Controls.Add(txtBox)
 
-            If field = "Salary" Or field = "Price" Or field = "Stock" Then
+            If field = "Salary" Or field = "Price" Or field = "Stock" Or field = "Quantity" Or field = "Amount" Then
 
                 Dim comboBox As New ComboBox()
                 comboBox.Name = "cmb" & field

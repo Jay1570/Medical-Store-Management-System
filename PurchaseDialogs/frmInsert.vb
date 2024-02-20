@@ -105,27 +105,33 @@ Public Class frmInsert
 
     Private Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
 
+        Try
 
 
-        conn.Open()
 
-        If lstProduct.SelectedItem Is Nothing OrElse lstSupplier.SelectedItem Is Nothing Then
-            MessageBox.Show("Please select both a product and a supplier.")
-            Return
-        End If
+            If lstProduct.SelectedItem Is Nothing OrElse lstSupplier.SelectedItem Is Nothing Then
+                MessageBox.Show("Please select both a product and a supplier.")
 
-        cmd = New OleDbCommand("SELECT Id, Stock FROM Products WHERE [Name] = @name", conn)
-        Dim cmd1 As New OleDbCommand("SELECT Id FROM Supplier WHERE [Name] = @sname", conn)
-        cmd.Parameters.Clear()
-        cmd1.Parameters.Clear()
-        cmd.Parameters.AddWithValue("@name", lstProduct.SelectedItem.ToString())
-        cmd1.Parameters.AddWithValue("@sname", lstSupplier.SelectedItem.ToString())
-        Dim reader As OleDbDataReader = cmd.ExecuteReader()
-        If (reader.Read()) Then
-            pid = Val(reader("Id").ToString())
-            stock = Val(reader("Stock").ToString())
-        End If
-        Dim sid As Integer = Convert.ToInt32(cmd1.ExecuteScalar())
+                Return
+            End If
+            If txtAmount.Text.Equals("") And txtQuantity.Text.Equals("") Then
+                MessageBox.Show("All Fields are mandatory")
+                Return
+            End If
+
+            conn.Open()
+            cmd = New OleDbCommand("SELECT Id, Stock FROM Products WHERE [Name] = @name", conn)
+            Dim cmd1 As New OleDbCommand("SELECT Id FROM Supplier WHERE [Name] = @sname", conn)
+            cmd.Parameters.Clear()
+            cmd1.Parameters.Clear()
+            cmd.Parameters.AddWithValue("@name", lstProduct.SelectedItem.ToString())
+            cmd1.Parameters.AddWithValue("@sname", lstSupplier.SelectedItem.ToString())
+            Dim reader As OleDbDataReader = cmd.ExecuteReader()
+            If (reader.Read()) Then
+                pid = Val(reader("Id").ToString())
+                stock = Val(reader("Stock").ToString())
+            End If
+            Dim sid As Integer = Convert.ToInt32(cmd1.ExecuteScalar())
             Dim day As DateTime = DateTime.Today
             query = "INSERT INTO PurchaseLog(pid,sid,[Date],Quantity,Amount) VALUES(@pid,@sid,@date,@quantity,@amount)"
             Dim insert As New OleDbCommand(query, conn)
@@ -143,7 +149,21 @@ Public Class frmInsert
             conn.Close()
             Close()
 
+        Catch ex As Exception
 
+            conn.Close()
+            MessageBox.Show("Error :- " & ex.Message)
+
+        End Try
+
+        DialogResult = DialogResult.OK
+
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+
+        DialogResult = DialogResult.Cancel
+        Close()
 
     End Sub
 

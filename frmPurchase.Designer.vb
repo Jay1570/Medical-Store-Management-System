@@ -22,16 +22,14 @@ Partial Class frmPurchase
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Label1 = New Label()
         dgvPurchase = New DataGridView()
         Panel1 = New Panel()
         btnAdd = New Button()
         btnShowAll = New Button()
-        btnUpdate = New Button()
         btnSearch = New Button()
-        btnDelete = New Button()
         CType(dgvPurchase, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         SuspendLayout()
@@ -52,23 +50,23 @@ Partial Class frmPurchase
         dgvPurchase.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvPurchase.BackgroundColor = Color.White
         dgvPurchase.BorderStyle = BorderStyle.None
-        DataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = SystemColors.MenuHighlight
-        DataGridViewCellStyle7.Font = New Font("Segoe UI", 9F)
-        DataGridViewCellStyle7.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = DataGridViewTriState.True
-        dgvPurchase.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = SystemColors.MenuHighlight
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        dgvPurchase.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         dgvPurchase.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = SystemColors.Window
-        DataGridViewCellStyle8.Font = New Font("Segoe UI", 9F)
-        DataGridViewCellStyle8.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = DataGridViewTriState.False
-        dgvPurchase.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = SystemColors.Window
+        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F)
+        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
+        dgvPurchase.DefaultCellStyle = DataGridViewCellStyle2
         dgvPurchase.Location = New Point(10, 60)
         dgvPurchase.Name = "dgvPurchase"
         dgvPurchase.RowHeadersVisible = False
@@ -81,9 +79,7 @@ Partial Class frmPurchase
         Panel1.BackColor = Color.White
         Panel1.Controls.Add(btnAdd)
         Panel1.Controls.Add(btnShowAll)
-        Panel1.Controls.Add(btnUpdate)
         Panel1.Controls.Add(btnSearch)
-        Panel1.Controls.Add(btnDelete)
         Panel1.Dock = DockStyle.Bottom
         Panel1.Location = New Point(10, 690)
         Panel1.Name = "Panel1"
@@ -92,7 +88,7 @@ Partial Class frmPurchase
         ' 
         ' btnAdd
         ' 
-        btnAdd.Location = New Point(190, 8)
+        btnAdd.Location = New Point(164, 8)
         btnAdd.Name = "btnAdd"
         btnAdd.Size = New Size(112, 34)
         btnAdd.TabIndex = 6
@@ -101,39 +97,21 @@ Partial Class frmPurchase
         ' 
         ' btnShowAll
         ' 
-        btnShowAll.Location = New Point(749, 8)
+        btnShowAll.Location = New Point(754, 8)
         btnShowAll.Name = "btnShowAll"
         btnShowAll.Size = New Size(112, 34)
         btnShowAll.TabIndex = 12
         btnShowAll.Text = "Show All"
         btnShowAll.UseVisualStyleBackColor = True
         ' 
-        ' btnUpdate
-        ' 
-        btnUpdate.Location = New Point(320, 8)
-        btnUpdate.Name = "btnUpdate"
-        btnUpdate.Size = New Size(112, 34)
-        btnUpdate.TabIndex = 7
-        btnUpdate.Text = "Update"
-        btnUpdate.UseVisualStyleBackColor = True
-        ' 
         ' btnSearch
         ' 
-        btnSearch.Location = New Point(601, 8)
+        btnSearch.Location = New Point(459, 8)
         btnSearch.Name = "btnSearch"
         btnSearch.Size = New Size(112, 34)
         btnSearch.TabIndex = 9
         btnSearch.Text = "Search"
         btnSearch.UseVisualStyleBackColor = True
-        ' 
-        ' btnDelete
-        ' 
-        btnDelete.Location = New Point(461, 8)
-        btnDelete.Name = "btnDelete"
-        btnDelete.Size = New Size(112, 34)
-        btnDelete.TabIndex = 8
-        btnDelete.Text = "Delete"
-        btnDelete.UseVisualStyleBackColor = True
         ' 
         ' frmPurchase
         ' 
@@ -159,7 +137,5 @@ Partial Class frmPurchase
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnShowAll As Button
-    Friend WithEvents btnUpdate As Button
     Friend WithEvents btnSearch As Button
-    Friend WithEvents btnDelete As Button
 End Class
