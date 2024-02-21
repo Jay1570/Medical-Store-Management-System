@@ -37,8 +37,5 @@
     <Compile Update="frmUpdateDialog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="PurchaseDialogs\frmInsert.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

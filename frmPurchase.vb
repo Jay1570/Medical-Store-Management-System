@@ -35,10 +35,45 @@ Public Class frmPurchase
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
 
-        Dim insert As New frmInsert()
+        Dim insert As New frmInsertDialog(fields)
         If insert.ShowDialog() = DialogResult.OK Then
+            values.Clear()
+            values = insert.InsertValues
+            Dim pid, stock, sid As Integer
+            Try
 
-            MessageBox.Show("Inserted Successfully")
+                conn.Open()
+                cmd = New OleDbCommand("SELECT Id,Stock FROM Products WHERE [Name] = @name", conn)
+                cmd.Parameters.AddWithValue("@name", values(0))
+                Dim reader As OleDbDataReader = cmd.ExecuteReader()
+                If (reader.Read()) Then
+                    pid = Val(reader("Id").ToString())
+                    stock = Val(reader("Stock").ToString())
+                End If
+                cmd = New OleDbCommand("SELECT Id FROM Supplier WHERE [Name] = @sname", conn)
+                cmd.Parameters.AddWithValue("@sname", values(1))
+                sid = Val(cmd.ExecuteScalar().ToString())
+                stock += values(2)
+                cmd = New OleDbCommand("UPDATE Products SET Stock = " & stock & " WHERE Id = " & pid, conn)
+                cmd.ExecuteNonQuery()
+                Dim query = "INSERT INTO PurchaseLog(pid,sid,[Date],Quantity,Amount) VALUES(@pid,@sid,@date,@quantity,@amount)"
+                cmd = New OleDbCommand(query, conn)
+                cmd.Parameters.AddWithValue("@pid", pid)
+                cmd.Parameters.AddWithValue("@sid", sid)
+                cmd.Parameters.AddWithValue("@date", DateTime.Today)
+                cmd.Parameters.AddWithValue("@quantity", values(2))
+                cmd.Parameters.AddWithValue("@amount", values(3))
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Inserted Successfully")
+                conn.Close()
+                showdata()
+
+            Catch ex As Exception
+
+                conn.Close()
+                MessageBox.Show("Error :- " & ex.Message)
+
+            End Try
 
         End If
 
@@ -52,6 +87,7 @@ Public Class frmPurchase
             selectedFields.Clear()
             selectedFields = search.SelectedFields
             values = search.SearchValues
+            Dim f As String = ""
 
             Dim comparativeOperator As String = search.ComparativeOperators
 
@@ -75,8 +111,9 @@ Public Class frmPurchase
                         query &= "sid = " & sid.ToString() & " "
                     ElseIf selectedFields(i).Contains("Date") Then
                         Dim dateParts As String() = values(i).Split("-"c)
-                        Dim f As String = $"{dateParts(1)}/{dateParts(0)}/{dateParts(2)}"
-                        query &= $"{selectedFields(i)} = '#{f}' "
+                        f = $"{dateParts(0)}/{dateParts(1)}/{dateParts(2)}"
+                        Dim d As DateTime = DateTime.Parse(f)
+                        query &= selectedFields(i) & " = #" & d & "# "
                     Else
                         query &= selectedFields(i) & " = " & "'" & values(i) & "' "
                     End If

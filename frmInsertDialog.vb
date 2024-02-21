@@ -1,11 +1,21 @@
-﻿Imports System.Management
+﻿Imports System.Data.OleDb
+Imports System.Management
 
 Public Class frmInsertDialog
 
     Public Property InsertValues As New List(Of String)
+    Dim conn As New OleDbConnection
+    Dim cmd As New OleDbCommand
+    Dim ds As New DataSet
+    Dim adp As New OleDbDataAdapter
+    Dim lstProduct As New ComboBox
+    Dim lstSupplier As New ComboBox
     Public Sub New(ByVal fieldsList As List(Of String))
 
+
+
         InitializeComponent()
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
 
         Me.AutoSize = True
         Me.AutoSizeMode = AutoSizeMode.GrowOnly
@@ -15,7 +25,7 @@ Public Class frmInsertDialog
 
         For Each field As String In fieldsList
 
-            If field = "Stock" Then
+            If field = "Stock" Or field = "Date" Then
                 Continue For
             End If
 
@@ -27,6 +37,30 @@ Public Class frmInsertDialog
             label.Text = field
             label.Size = New Size(150, 30)
             fieldPanel.Controls.Add(label)
+
+            If field = "Product Name" Or field = "Supplier Name" Then
+
+                If field = "Product Name" Then
+                    lstProduct.Name = "cmbProduct"
+                    adp = New OleDbDataAdapter("SELECT [Name] From Products", conn)
+                    adp.Fill(ds)
+                    For Each row As DataRow In ds.Tables(0).Rows
+                        lstProduct.Items.Add(row("Name").ToString())
+                    Next
+                    fieldPanel.Controls.Add(lstProduct)
+                Else
+                    ds.Clear()
+                    lstSupplier.Name = "cmbSupplier"
+                    adp = New OleDbDataAdapter("SELECT [Name] From Supplier", conn)
+                    adp.Fill(ds)
+                    For Each row As DataRow In ds.Tables(0).Rows
+                        lstSupplier.Items.Add(row("Name").ToString())
+                    Next
+                    fieldPanel.Controls.Add(lstSupplier)
+                End If
+                FlowLayoutPanel1.Controls.Add(fieldPanel)
+                Continue For
+            End If
 
             Dim txtBox As New TextBox()
             txtBox.Name = "txt" & field
@@ -48,6 +82,9 @@ Public Class frmInsertDialog
                 For Each ctrl As Control In fieldPanel.Controls
                     If TypeOf ctrl Is TextBox Then
                         InsertValues.Add(ctrl.Text)
+                    End If
+                    If TypeOf ctrl Is ComboBox Then
+                        InsertValues.Add(DirectCast(ctrl, ComboBox).SelectedItem.ToString())
                     End If
                 Next
             End If
