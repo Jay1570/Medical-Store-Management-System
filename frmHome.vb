@@ -55,6 +55,7 @@ Public Class frmHome
         frmProducts.Close()
         frmSupplier.Close()
         frmPurchase.Close()
+        frmBills.Close()
 
     End Sub
 
@@ -73,6 +74,7 @@ Public Class frmHome
         frmProducts.Close()
         frmSupplier.Close()
         frmPurchase.Close()
+        frmBills.Close()
 
     End Sub
 
@@ -91,6 +93,7 @@ Public Class frmHome
         frmEmployee.Close()
         frmSupplier.Close()
         frmPurchase.Close()
+        frmBills.Close()
 
     End Sub
 
@@ -109,6 +112,7 @@ Public Class frmHome
         frmEmployee.Close()
         frmProducts.Close()
         frmPurchase.Close()
+        frmBills.Close()
 
     End Sub
 
@@ -127,6 +131,26 @@ Public Class frmHome
         frmEmployee.Close()
         frmProducts.Close()
         frmSupplier.Close()
+        frmBills.Close()
+
+    End Sub
+
+    Private Sub btnSales_Click(sender As Object, e As EventArgs) Handles btnSales.Click
+
+        With frmBills
+
+            .TopLevel = False
+            Panel3.Controls.Add(frmBills)
+            .BringToFront()
+            .Show()
+
+        End With
+
+        frmPurchase.Close()
+        frmOverView.Close()
+        frmEmployee.Close()
+        frmProducts.Close()
+        frmSupplier.Close()
 
     End Sub
 
@@ -137,7 +161,9 @@ Public Class frmHome
         frmProducts.Close()
         frmSupplier.Close()
         frmPurchase.Close()
+        frmBills.Close()
 
     End Sub
+
 
 End Class
