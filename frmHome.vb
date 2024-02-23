@@ -10,7 +10,7 @@ Public Class frmHome
     Dim adp As OleDbDataAdapter
     Dim ds As DataSet
 
-    Private Sub frmHome_Load(sender As Object, e As EventArgs) Handles MyBase.Shown
+    Private Sub frmHome_Show(sender As Object, e As EventArgs) Handles MyBase.Shown
 
         Me.Activate()
         Me.CenterToScreen()
@@ -29,10 +29,6 @@ Public Class frmHome
     'Sub showdata()
     'Dim query As String = "SELECT TOP 4 p.prod_nm,p.price,SUM(s.quantity_sold) AS total FROM Products AS p INNER JOIN Sales As s ON p.prod_id=s.prod_id GROUP BY p.prod_nm,p.price ORDER BY total DESC"
     'End Sub
-
-    Private Sub frmHome_Show(sender As Object, e As EventArgs) Handles MyBase.Shown
-        'MessageBox.Show("Login Sucessfull!", "Successfull")
-    End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
 

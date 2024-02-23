@@ -10,6 +10,7 @@ Public Class frmInsertDialog
     Dim adp As New OleDbDataAdapter
     Dim lstProduct As New ComboBox
     Dim lstSupplier As New ComboBox
+
     Public Sub New(ByVal fieldsList As List(Of String))
 
 
