@@ -152,6 +152,7 @@ Public Class frmEmployee
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
 
+        Dim j As Integer = 0
         Dim search As New frmSearchDialog(fields)
         If search.ShowDialog() = DialogResult.OK Then
             values.Clear()
@@ -159,14 +160,15 @@ Public Class frmEmployee
             selectedFields = search.SelectedFields
             values = search.SearchValues
 
-            Dim comparativeOperator As String = search.ComparativeOperators
+            Dim comparativeOperator() As String = search.ComparativeOperators
 
             Try
 
                 Dim query As String = "SELECT Username,[Name],Salary,Designation FROM Employee WHERE "
                 For i As Integer = 0 To selectedFields.Count - 1
                     If selectedFields(i).Contains("Salary") Then
-                        query &= selectedFields(i) & " " & comparativeOperator & " " & values(i) & " "
+                        query &= selectedFields(i) & " " & comparativeOperator(j) & " " & values(i) & " "
+                        j += 1
                     Else
                         query &= selectedFields(i) & " = " & "'" & values(i) & "' "
                     End If

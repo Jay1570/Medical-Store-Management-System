@@ -152,6 +152,7 @@ Partial Class frmSupplier
         ' 
         AutoScaleDimensions = New SizeF(144F, 144F)
         AutoScaleMode = AutoScaleMode.Dpi
+        AutoSizeMode = AutoSizeMode.GrowAndShrink
         BackColor = Color.White
         ClientSize = New Size(1050, 750)
         Controls.Add(Panel1)

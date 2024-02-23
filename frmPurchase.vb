@@ -87,16 +87,18 @@ Public Class frmPurchase
             selectedFields.Clear()
             selectedFields = search.SelectedFields
             values = search.SearchValues
-            Dim f As String = ""
+            Dim f As String
 
-            Dim comparativeOperator As String = search.ComparativeOperators
+            Dim comparativeOperator() As String = search.ComparativeOperators
 
             Try
 
+                Dim j As Integer = 0
                 Dim query As String = "SELECT p.Name AS [Product Name], s.Name AS [Supplier Name], c.Date, c.Quantity, c.Amount FROM (Products AS p INNER JOIN PurchaseLog AS c ON p.Id = c.pid)INNER JOIN Supplier AS s ON c.sid = s.ID WHERE "
                 For i As Integer = 0 To selectedFields.Count - 1
                     If selectedFields(i).Contains("Quantity") Or selectedFields(i).Contains("Amount") Then
-                        query &= selectedFields(i) & " " & comparativeOperator & " " & values(i) & " "
+                        query &= selectedFields(i) & " " & comparativeOperator(j) & " " & values(i) & " "
+                        j += 1
                     ElseIf selectedFields(i).Contains("Product Name") Then
                         conn.Open()
                         Dim p = New OleDbCommand("SELECT Id FROM Products WHERE [Name] = '" & values(i) & "'", conn)

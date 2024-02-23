@@ -23,9 +23,10 @@ Partial Class frmHome
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
+        btnSales = New Button()
         btnClose = New Button()
         btnPurchase = New Button()
-        btnSales = New Button()
+        btnBills = New Button()
         btnSupplier = New Button()
         btnProducts = New Button()
         btnEmployee = New Button()
@@ -41,9 +42,10 @@ Partial Class frmHome
         ' Panel1
         ' 
         Panel1.BackColor = SystemColors.MenuHighlight
+        Panel1.Controls.Add(btnSales)
         Panel1.Controls.Add(btnClose)
         Panel1.Controls.Add(btnPurchase)
-        Panel1.Controls.Add(btnSales)
+        Panel1.Controls.Add(btnBills)
         Panel1.Controls.Add(btnSupplier)
         Panel1.Controls.Add(btnProducts)
         Panel1.Controls.Add(btnEmployee)
@@ -57,6 +59,23 @@ Partial Class frmHome
         Panel1.Size = New Size(250, 750)
         Panel1.TabIndex = 0
         ' 
+        ' btnSales
+        ' 
+        btnSales.BackColor = SystemColors.MenuHighlight
+        btnSales.Cursor = Cursors.Hand
+        btnSales.FlatAppearance.BorderSize = 0
+        btnSales.FlatStyle = FlatStyle.Flat
+        btnSales.Font = New Font("Segoe UI", 12F)
+        btnSales.ForeColor = Color.White
+        btnSales.Location = New Point(0, 544)
+        btnSales.Name = "btnSales"
+        btnSales.Padding = New Padding(10, 0, 0, 0)
+        btnSales.Size = New Size(250, 60)
+        btnSales.TabIndex = 10
+        btnSales.Text = "Sales"
+        btnSales.TextAlign = ContentAlignment.MiddleLeft
+        btnSales.UseVisualStyleBackColor = False
+        ' 
         ' btnClose
         ' 
         btnClose.BackColor = SystemColors.MenuHighlight
@@ -65,7 +84,7 @@ Partial Class frmHome
         btnClose.FlatStyle = FlatStyle.Flat
         btnClose.Font = New Font("Segoe UI", 12F)
         btnClose.ForeColor = Color.White
-        btnClose.Location = New Point(0, 544)
+        btnClose.Location = New Point(0, 604)
         btnClose.Name = "btnClose"
         btnClose.Padding = New Padding(10, 0, 0, 0)
         btnClose.Size = New Size(250, 60)
@@ -82,7 +101,7 @@ Partial Class frmHome
         btnPurchase.FlatStyle = FlatStyle.Flat
         btnPurchase.Font = New Font("Segoe UI", 12F)
         btnPurchase.ForeColor = Color.White
-        btnPurchase.Location = New Point(0, 484)
+        btnPurchase.Location = New Point(0, 424)
         btnPurchase.Name = "btnPurchase"
         btnPurchase.Padding = New Padding(10, 0, 0, 0)
         btnPurchase.Size = New Size(250, 60)
@@ -91,22 +110,22 @@ Partial Class frmHome
         btnPurchase.TextAlign = ContentAlignment.MiddleLeft
         btnPurchase.UseVisualStyleBackColor = False
         ' 
-        ' btnSales
+        ' btnBills
         ' 
-        btnSales.BackColor = SystemColors.MenuHighlight
-        btnSales.Cursor = Cursors.Hand
-        btnSales.FlatAppearance.BorderSize = 0
-        btnSales.FlatStyle = FlatStyle.Flat
-        btnSales.Font = New Font("Segoe UI", 12F)
-        btnSales.ForeColor = Color.White
-        btnSales.Location = New Point(0, 424)
-        btnSales.Name = "btnSales"
-        btnSales.Padding = New Padding(10, 0, 0, 0)
-        btnSales.Size = New Size(250, 60)
-        btnSales.TabIndex = 7
-        btnSales.Text = "Sales"
-        btnSales.TextAlign = ContentAlignment.MiddleLeft
-        btnSales.UseVisualStyleBackColor = False
+        btnBills.BackColor = SystemColors.MenuHighlight
+        btnBills.Cursor = Cursors.Hand
+        btnBills.FlatAppearance.BorderSize = 0
+        btnBills.FlatStyle = FlatStyle.Flat
+        btnBills.Font = New Font("Segoe UI", 12F)
+        btnBills.ForeColor = Color.White
+        btnBills.Location = New Point(0, 484)
+        btnBills.Name = "btnBills"
+        btnBills.Padding = New Padding(10, 0, 0, 0)
+        btnBills.Size = New Size(250, 60)
+        btnBills.TabIndex = 7
+        btnBills.Text = "Bills"
+        btnBills.TextAlign = ContentAlignment.MiddleLeft
+        btnBills.UseVisualStyleBackColor = False
         ' 
         ' btnSupplier
         ' 
@@ -218,6 +237,8 @@ Partial Class frmHome
         ' 
         AutoScaleDimensions = New SizeF(144F, 144F)
         AutoScaleMode = AutoScaleMode.Dpi
+        AutoSizeMode = AutoSizeMode.GrowAndShrink
+        BackColor = Color.White
         ClientSize = New Size(1300, 750)
         Controls.Add(Panel3)
         Controls.Add(Panel1)
@@ -239,7 +260,8 @@ Partial Class frmHome
     Friend WithEvents btnProducts As Button
     Friend WithEvents btnEmployee As Button
     Friend WithEvents btnPurchase As Button
-    Friend WithEvents btnSales As Button
+    Friend WithEvents btnBills As Button
     Friend WithEvents btnSupplier As Button
     Friend WithEvents btnClose As Button
+    Friend WithEvents btnSales As Button
 End Class

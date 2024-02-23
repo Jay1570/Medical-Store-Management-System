@@ -2,7 +2,7 @@
 
     Public Property SelectedFields As New List(Of String)
     Public Property SearchValues As New List(Of String)
-    Public Property ComparativeOperators As String
+    Public ComparativeOperators(5) As String
 
     Public Sub New(ByVal fieldsList As List(Of String))
 
@@ -86,6 +86,7 @@
 
         SelectedFields.Clear()
         SearchValues.Clear()
+        Dim i As Integer = 0
         For Each fieldPanel As Control In FlowLayoutPanel1.Controls
 
             If TypeOf fieldPanel Is FlowLayoutPanel Then
@@ -104,7 +105,8 @@
                             End If
 
                             If TypeOf txt Is ComboBox AndAlso txt.Name = relatedCombo Then
-                                ComparativeOperators = DirectCast(txt, ComboBox).SelectedItem
+                                ComparativeOperators(i) = DirectCast(txt, ComboBox).SelectedItem
+                                i += 1
                             End If
 
                         Next

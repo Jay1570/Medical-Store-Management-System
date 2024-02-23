@@ -40,6 +40,9 @@
     <Compile Update="frmBills.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmSales.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmSupplier.vb">
       <SubType>Form</SubType>
     </Compile>

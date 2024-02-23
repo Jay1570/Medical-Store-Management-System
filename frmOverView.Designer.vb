@@ -52,7 +52,7 @@ Partial Class frmOverView
         ' panelQuantity
         ' 
         panelQuantity.BackColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
-        panelQuantity.Location = New Point(55, 30)
+        panelQuantity.Location = New Point(30, 30)
         panelQuantity.Name = "panelQuantity"
         panelQuantity.Padding = New Padding(30)
         panelQuantity.Size = New Size(300, 200)
@@ -61,7 +61,7 @@ Partial Class frmOverView
         ' panelSale
         ' 
         panelSale.BackColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
-        panelSale.Location = New Point(375, 30)
+        panelSale.Location = New Point(350, 30)
         panelSale.Name = "panelSale"
         panelSale.Padding = New Padding(30)
         panelSale.Size = New Size(300, 200)
@@ -70,7 +70,7 @@ Partial Class frmOverView
         ' panelPurchase
         ' 
         panelPurchase.BackColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
-        panelPurchase.Location = New Point(695, 30)
+        panelPurchase.Location = New Point(670, 30)
         panelPurchase.Name = "panelPurchase"
         panelPurchase.Padding = New Padding(30)
         panelPurchase.Size = New Size(300, 200)
@@ -121,11 +121,11 @@ Partial Class frmOverView
         ' 
         Panel9.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         Panel9.Controls.Add(panelTop1)
-        Panel9.Location = New Point(60, 320)
+        Panel9.Location = New Point(63, 320)
         Panel9.Margin = New Padding(10)
         Panel9.Name = "Panel9"
         Panel9.Padding = New Padding(30)
-        Panel9.Size = New Size(200, 400)
+        Panel9.Size = New Size(200, 375)
         Panel9.TabIndex = 7
         ' 
         ' Label1
@@ -150,11 +150,11 @@ Partial Class frmOverView
         ' 
         Panel2.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         Panel2.Controls.Add(Panel1)
-        Panel2.Location = New Point(317, 320)
+        Panel2.Location = New Point(288, 320)
         Panel2.Margin = New Padding(10)
         Panel2.Name = "Panel2"
         Panel2.Padding = New Padding(30)
-        Panel2.Size = New Size(200, 400)
+        Panel2.Size = New Size(200, 375)
         Panel2.TabIndex = 8
         ' 
         ' Label3
@@ -179,11 +179,11 @@ Partial Class frmOverView
         ' 
         Panel4.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         Panel4.Controls.Add(Panel3)
-        Panel4.Location = New Point(574, 320)
+        Panel4.Location = New Point(513, 320)
         Panel4.Margin = New Padding(10)
         Panel4.Name = "Panel4"
         Panel4.Padding = New Padding(30)
-        Panel4.Size = New Size(200, 400)
+        Panel4.Size = New Size(200, 375)
         Panel4.TabIndex = 9
         ' 
         ' Label4
@@ -208,17 +208,18 @@ Partial Class frmOverView
         ' 
         Panel6.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         Panel6.Controls.Add(Panel5)
-        Panel6.Location = New Point(831, 320)
+        Panel6.Location = New Point(738, 320)
         Panel6.Margin = New Padding(10)
         Panel6.Name = "Panel6"
         Panel6.Padding = New Padding(30)
-        Panel6.Size = New Size(200, 400)
+        Panel6.Size = New Size(200, 375)
         Panel6.TabIndex = 8
         ' 
         ' frmOverView
         ' 
         AutoScaleDimensions = New SizeF(144F, 144F)
         AutoScaleMode = AutoScaleMode.Dpi
+        AutoSizeMode = AutoSizeMode.GrowAndShrink
         ClientSize = New Size(1050, 750)
         Controls.Add(Panel6)
         Controls.Add(Panel4)

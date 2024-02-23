@@ -125,3 +125,4 @@ E:\Medical Store Management System\obj\Debug\net8.0-windows7.0\Medical_Store_Man
 E:\Medical Store Management System\obj\Debug\net8.0-windows7.0\Medical .B0DA1B2F.Up2Date
 E:\Medical Store Management System\obj\Debug\net8.0-windows7.0\Medical_Store_Management.frmInsertSaleItems.resources
 E:\Medical Store Management System\obj\Debug\net8.0-windows7.0\Medical_Store_Management.frmBills.resources
+E:\Medical Store Management System\obj\Debug\net8.0-windows7.0\Medical_Store_Management.frmSales.resources

@@ -118,31 +118,32 @@ Public Class frmInsertSaleItems
         If totalAmount = 0 Then
             Return
         End If
-        'Try
-        conn.Open()
-        cmd = New OleDbCommand("INSERT INTO Sales([Date],Amount) VALUES(@date,@amount)", conn)
-        cmd.Parameters.AddWithValue("@date", DateTime.Today)
-        cmd.Parameters.AddWithValue("@amount", totalAmount)
-        cmd.ExecuteNonQuery()
-        cmd.CommandText = "SELECT @@Identity "
-        Dim sid As Integer = Val(cmd.ExecuteScalar())
-        For Each item As BillItem In currentBill
-            Dim pid As Integer = getProductId(item.ProductName)
-            Dim query As String = "INSERT INTO SaleItems(sid,pid,Quantity,Price) VALUES(" & sid & ", " & pid & ", " & item.Quantity & ", " & item.Total & ")"
-            cmd = New OleDbCommand(query, conn)
+        Try
+            conn.Open()
+            cmd = New OleDbCommand("INSERT INTO Sales([Date],Amount) VALUES(@date,@amount)", conn)
+            cmd.Parameters.AddWithValue("@date", DateTime.Today)
+            cmd.Parameters.AddWithValue("@amount", totalAmount)
             cmd.ExecuteNonQuery()
-            stock -= item.Quantity
-            cmd = New OleDbCommand("UPDATE Products SET Stock = " & stock & " WHERE Id = " & pid, conn)
-            cmd.ExecuteNonQuery()
-        Next
-        conn.Close()
-        'Catch ex As Exception
-        ' MessageBox.Show("Error :- " & ex.Message)
-        ' Finally
-        'conn.Close()
-        'End Try
+            cmd.CommandText = "SELECT @@Identity "
+            Dim sid As Integer = Val(cmd.ExecuteScalar())
+            For Each item As BillItem In currentBill
+                Dim pid As Integer = getProductId(item.ProductName)
+                Dim query As String = "INSERT INTO SaleItems(sid,pid,Quantity,Price) VALUES(" & sid & ", " & pid & ", " & item.Quantity & ", " & item.Total & ")"
+                cmd = New OleDbCommand(query, conn)
+                cmd.ExecuteNonQuery()
+                stock -= item.Quantity
+                cmd = New OleDbCommand("UPDATE Products SET Stock = " & stock & " WHERE Id = " & pid, conn)
+                cmd.ExecuteNonQuery()
+            Next
+            conn.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error :- " & ex.Message)
+        Finally
+            conn.Close()
+        End Try
         DialogResult = DialogResult.OK
         Close()
+
     End Sub
 
     Private Sub PrintDocument_PrintPage(sender As Object, e As Printing.PrintPageEventArgs)

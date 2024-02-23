@@ -88,7 +88,7 @@ Partial Class frmPurchase
         ' 
         ' btnAdd
         ' 
-        btnAdd.Location = New Point(164, 8)
+        btnAdd.Location = New Point(311, 8)
         btnAdd.Name = "btnAdd"
         btnAdd.Size = New Size(112, 34)
         btnAdd.TabIndex = 6
@@ -97,7 +97,7 @@ Partial Class frmPurchase
         ' 
         ' btnShowAll
         ' 
-        btnShowAll.Location = New Point(754, 8)
+        btnShowAll.Location = New Point(607, 8)
         btnShowAll.Name = "btnShowAll"
         btnShowAll.Size = New Size(112, 34)
         btnShowAll.TabIndex = 12
