@@ -3,13 +3,6 @@ Imports System.Data.OleDb
 
 Public Class frmHome
 
-    Dim empName As String
-    Dim empType As String
-    Dim conn As New OleDbConnection
-    Dim cmd As New OleDbCommand
-    Dim adp As OleDbDataAdapter
-    Dim ds As DataSet
-
     Private Sub frmHome_Show(sender As Object, e As EventArgs) Handles MyBase.Shown
 
         Me.Activate()
@@ -20,15 +13,8 @@ Public Class frmHome
             .BringToFront()
             .Show()
         End With
-        'conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System1\My Project\Medical Store Management System.accdb"
-        'conn.Open()
-        'showdata()
 
     End Sub
-
-    'Sub showdata()
-    'Dim query As String = "SELECT TOP 4 p.prod_nm,p.price,SUM(s.quantity_sold) AS total FROM Products AS p INNER JOIN Sales As s ON p.prod_id=s.prod_id GROUP BY p.prod_nm,p.price ORDER BY total DESC"
-    'End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
 

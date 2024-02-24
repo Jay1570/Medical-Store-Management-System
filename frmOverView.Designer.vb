@@ -30,15 +30,19 @@ Partial Class frmOverView
         labelTopPrice1 = New Label()
         panelTop1 = New Panel()
         Panel9 = New Panel()
-        Label1 = New Label()
+        labelTopPrice2 = New Label()
         Panel1 = New Panel()
         Panel2 = New Panel()
-        Label3 = New Label()
+        labelTopPrice3 = New Label()
         Panel3 = New Panel()
         Panel4 = New Panel()
-        Label4 = New Label()
+        labelTopPrice4 = New Label()
         Panel5 = New Panel()
         Panel6 = New Panel()
+        labelTopName1 = New Label()
+        labelTopName2 = New Label()
+        labelTopName3 = New Label()
+        labelTopName4 = New Label()
         panelTop1.SuspendLayout()
         Panel9.SuspendLayout()
         Panel1.SuspendLayout()
@@ -112,7 +116,7 @@ Partial Class frmOverView
         ' 
         panelTop1.BackColor = Color.Tan
         panelTop1.Controls.Add(labelTopPrice1)
-        panelTop1.Location = New Point(0, 85)
+        panelTop1.Location = New Point(63, 370)
         panelTop1.Name = "panelTop1"
         panelTop1.Size = New Size(200, 207)
         panelTop1.TabIndex = 0
@@ -120,7 +124,7 @@ Partial Class frmOverView
         ' Panel9
         ' 
         Panel9.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
-        Panel9.Controls.Add(panelTop1)
+        Panel9.Controls.Add(labelTopName1)
         Panel9.Location = New Point(63, 320)
         Panel9.Margin = New Padding(10)
         Panel9.Name = "Panel9"
@@ -128,20 +132,20 @@ Partial Class frmOverView
         Panel9.Size = New Size(200, 375)
         Panel9.TabIndex = 7
         ' 
-        ' Label1
+        ' labelTopPrice2
         ' 
-        Label1.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
-        Label1.Location = New Point(110, 0)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(90, 36)
-        Label1.TabIndex = 0
-        Label1.Text = "Price1"
+        labelTopPrice2.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
+        labelTopPrice2.Location = New Point(110, 0)
+        labelTopPrice2.Name = "labelTopPrice2"
+        labelTopPrice2.Size = New Size(90, 36)
+        labelTopPrice2.TabIndex = 0
+        labelTopPrice2.Text = "Price1"
         ' 
         ' Panel1
         ' 
         Panel1.BackColor = Color.Tan
-        Panel1.Controls.Add(Label1)
-        Panel1.Location = New Point(0, 85)
+        Panel1.Controls.Add(labelTopPrice2)
+        Panel1.Location = New Point(288, 370)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(200, 207)
         Panel1.TabIndex = 0
@@ -149,7 +153,7 @@ Partial Class frmOverView
         ' Panel2
         ' 
         Panel2.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
-        Panel2.Controls.Add(Panel1)
+        Panel2.Controls.Add(labelTopName2)
         Panel2.Location = New Point(288, 320)
         Panel2.Margin = New Padding(10)
         Panel2.Name = "Panel2"
@@ -157,20 +161,20 @@ Partial Class frmOverView
         Panel2.Size = New Size(200, 375)
         Panel2.TabIndex = 8
         ' 
-        ' Label3
+        ' labelTopPrice3
         ' 
-        Label3.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
-        Label3.Location = New Point(110, 0)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(90, 36)
-        Label3.TabIndex = 0
-        Label3.Text = "Price1"
+        labelTopPrice3.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
+        labelTopPrice3.Location = New Point(110, 0)
+        labelTopPrice3.Name = "labelTopPrice3"
+        labelTopPrice3.Size = New Size(90, 36)
+        labelTopPrice3.TabIndex = 0
+        labelTopPrice3.Text = "Price1"
         ' 
         ' Panel3
         ' 
         Panel3.BackColor = Color.Tan
-        Panel3.Controls.Add(Label3)
-        Panel3.Location = New Point(0, 85)
+        Panel3.Controls.Add(labelTopPrice3)
+        Panel3.Location = New Point(0, 50)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(200, 207)
         Panel3.TabIndex = 0
@@ -178,6 +182,7 @@ Partial Class frmOverView
         ' Panel4
         ' 
         Panel4.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
+        Panel4.Controls.Add(labelTopName3)
         Panel4.Controls.Add(Panel3)
         Panel4.Location = New Point(513, 320)
         Panel4.Margin = New Padding(10)
@@ -186,20 +191,20 @@ Partial Class frmOverView
         Panel4.Size = New Size(200, 375)
         Panel4.TabIndex = 9
         ' 
-        ' Label4
+        ' labelTopPrice4
         ' 
-        Label4.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
-        Label4.Location = New Point(110, 0)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(90, 36)
-        Label4.TabIndex = 0
-        Label4.Text = "Price1"
+        labelTopPrice4.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
+        labelTopPrice4.Location = New Point(110, 0)
+        labelTopPrice4.Name = "labelTopPrice4"
+        labelTopPrice4.Size = New Size(90, 36)
+        labelTopPrice4.TabIndex = 0
+        labelTopPrice4.Text = "Price1"
         ' 
         ' Panel5
         ' 
         Panel5.BackColor = Color.Tan
-        Panel5.Controls.Add(Label4)
-        Panel5.Location = New Point(0, 85)
+        Panel5.Controls.Add(labelTopPrice4)
+        Panel5.Location = New Point(0, 50)
         Panel5.Name = "Panel5"
         Panel5.Size = New Size(200, 207)
         Panel5.TabIndex = 0
@@ -207,6 +212,7 @@ Partial Class frmOverView
         ' Panel6
         ' 
         Panel6.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
+        Panel6.Controls.Add(labelTopName4)
         Panel6.Controls.Add(Panel5)
         Panel6.Location = New Point(738, 320)
         Panel6.Margin = New Padding(10)
@@ -215,12 +221,50 @@ Partial Class frmOverView
         Panel6.Size = New Size(200, 375)
         Panel6.TabIndex = 8
         ' 
+        ' labelTopName1
+        ' 
+        labelTopName1.BackColor = Color.Transparent
+        labelTopName1.Location = New Point(22, 271)
+        labelTopName1.Name = "labelTopName1"
+        labelTopName1.Size = New Size(157, 45)
+        labelTopName1.TabIndex = 1
+        labelTopName1.Text = "Price1"
+        ' 
+        ' labelTopName2
+        ' 
+        labelTopName2.BackColor = Color.Transparent
+        labelTopName2.Location = New Point(22, 271)
+        labelTopName2.Name = "labelTopName2"
+        labelTopName2.Size = New Size(157, 45)
+        labelTopName2.TabIndex = 2
+        labelTopName2.Text = "Price1"
+        ' 
+        ' labelTopName3
+        ' 
+        labelTopName3.BackColor = Color.Transparent
+        labelTopName3.Location = New Point(22, 271)
+        labelTopName3.Name = "labelTopName3"
+        labelTopName3.Size = New Size(157, 45)
+        labelTopName3.TabIndex = 3
+        labelTopName3.Text = "Price1"
+        ' 
+        ' labelTopName4
+        ' 
+        labelTopName4.BackColor = Color.Transparent
+        labelTopName4.Location = New Point(22, 271)
+        labelTopName4.Name = "labelTopName4"
+        labelTopName4.Size = New Size(157, 45)
+        labelTopName4.TabIndex = 4
+        labelTopName4.Text = "Price1"
+        ' 
         ' frmOverView
         ' 
         AutoScaleDimensions = New SizeF(144F, 144F)
         AutoScaleMode = AutoScaleMode.Dpi
         AutoSizeMode = AutoSizeMode.GrowAndShrink
         ClientSize = New Size(1050, 750)
+        Controls.Add(Panel1)
+        Controls.Add(panelTop1)
         Controls.Add(Panel6)
         Controls.Add(Panel4)
         Controls.Add(Panel2)
@@ -254,13 +298,17 @@ Partial Class frmOverView
     Friend WithEvents labelTopPrice1 As Label
     Friend WithEvents panelTop1 As Panel
     Friend WithEvents Panel9 As Panel
-    Friend WithEvents Label1 As Label
+    Friend WithEvents labelTopPrice2 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label3 As Label
+    Friend WithEvents labelTopPrice3 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label4 As Label
+    Friend WithEvents labelTopPrice4 As Label
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel6 As Panel
+    Friend WithEvents labelTopName1 As Label
+    Friend WithEvents labelTopName2 As Label
+    Friend WithEvents labelTopName3 As Label
+    Friend WithEvents labelTopName4 As Label
 End Class

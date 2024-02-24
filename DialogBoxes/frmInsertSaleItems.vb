@@ -9,10 +9,13 @@ Public Class frmInsertSaleItems
     Dim adp As New OleDbDataAdapter
     Dim currentBill As New List(Of BillItem)()
     Dim stock As Integer
+    Dim totalAmount As Integer
+    Dim totalquantity As Integer
 
     Public Sub New()
 
         InitializeComponent()
+
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
         adp = New OleDbDataAdapter("SELECT [Name] From Products", conn)
         adp.Fill(ds)
@@ -26,7 +29,11 @@ Public Class frmInsertSaleItems
 
         Dim pid As Integer
         cmd = New OleDbCommand("SELECT Id,Stock FROM Products WHERE [Name] = '" & name & "'", conn)
-        pid = Val(cmd.ExecuteScalar().ToString())
+        Dim reader As OleDbDataReader = cmd.ExecuteReader()
+        If reader.Read() Then
+            stock = Val(reader("Stock").ToString())
+            pid = Val(reader("Id").ToString())
+        End If
         Return pid
 
     End Function
@@ -51,10 +58,9 @@ Public Class frmInsertSaleItems
         Dim pname As String = cmbProducts.SelectedItem().ToString()
         conn.Open()
         cmd = New OleDbCommand("SELECT Stock,Price FROM Products WHERE [Name] = '" & pname & "'", conn)
-        Dim reader As OleDbDataReader = cmd.ExecuteReader
+        Dim reader As OleDbDataReader = cmd.ExecuteReader()
         If reader.Read() Then
-            stock = Val(reader("Stock").ToString())
-            lblQuantity.Text = stock.ToString()
+            lblQuantity.Text = reader("Stock").ToString()
             lblPrice.Text = reader("Price").ToString()
         End If
         conn.Close()
@@ -62,10 +68,15 @@ Public Class frmInsertSaleItems
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-
+        If cmbProducts.SelectedIndex.Equals(-1) Then
+            MessageBox.Show("Please Select Product.")
+            Return
+        End If
         Dim pname As String = cmbProducts.SelectedItem.ToString()
+
         Dim quantity As Integer = Val(txtQuantity.Text())
         Dim price As Decimal = Val(lblPrice.Text())
+
 
         If quantity <= 0 Then
 
@@ -104,20 +115,22 @@ Public Class frmInsertSaleItems
 
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
 
-        Dim print As New PrintPreviewDialog()
-        Dim printDocument As New Printing.PrintDocument()
-        Dim totalAmount As Integer
-        AddHandler printDocument.PrintPage, AddressOf PrintDocument_PrintPage
-        print.Document = printDocument
-        print.ShowDialog()
         For Each item As BillItem In currentBill
 
             totalAmount += item.Total
+            totalquantity = totalquantity + item.Quantity
 
         Next
         If totalAmount = 0 Then
             Return
         End If
+        Dim print As New PrintPreviewDialog()
+        Dim printDocument As New Printing.PrintDocument()
+        AddHandler printDocument.PrintPage, AddressOf PrintDocument_PrintPage
+        print.Document = printDocument
+        print.ShowDialog()
+
+
         Try
             conn.Open()
             cmd = New OleDbCommand("INSERT INTO Sales([Date],Amount) VALUES(@date,@amount)", conn)
@@ -137,9 +150,8 @@ Public Class frmInsertSaleItems
             Next
             conn.Close()
         Catch ex As Exception
-            MessageBox.Show("Error :- " & ex.Message)
-        Finally
             conn.Close()
+            MessageBox.Show("Error :- " & ex.Message)
         End Try
         DialogResult = DialogResult.OK
         Close()
@@ -149,9 +161,46 @@ Public Class frmInsertSaleItems
     Private Sub PrintDocument_PrintPage(sender As Object, e As Printing.PrintPageEventArgs)
 
         DataGridView1.ClearSelection()
-        Dim bm As New Bitmap(DataGridView1.Width, DataGridView1.Height)
-        DataGridView1.DrawToBitmap(bm, New Rectangle(0, 0, DataGridView1.Width, DataGridView1.Height))
-        e.Graphics.DrawImage(bm, 0, 0)
+
+        Dim printArea As New Rectangle(50, 50, e.PageBounds.Width - 100, e.PageBounds.Height - 100)
+        Dim headerFont As New Font("Arial", 10, FontStyle.Bold)
+        Dim cellFont As New Font("Arial", 9)
+        Dim cellPadding As Integer = 5
+        Dim x As Integer = printArea.Left
+        Dim y As Integer = printArea.Top
+        For Each column As DataGridViewColumn In DataGridView1.Columns
+            e.Graphics.DrawString(column.HeaderText, headerFont, Brushes.Black, x, y)
+            x += column.Width
+        Next
+        y += headerFont.Height + cellPadding
+
+        For Each row As DataGridViewRow In DataGridView1.Rows
+            x = printArea.Left
+            For Each cell As DataGridViewCell In row.Cells
+                Dim cellValue As String = If(cell.Value IsNot Nothing, cell.Value.ToString(), "")
+                e.Graphics.DrawString(cellValue, cellFont, Brushes.Black, x, y)
+                x += DataGridView1.Columns(cell.ColumnIndex).Width
+            Next
+            y += cellFont.Height + cellPadding
+        Next
+        x = printArea.Left
+        For Each column As DataGridViewColumn In DataGridView1.Columns
+            If column.Name = "Product_Name" Then
+                e.Graphics.DrawString("Total", headerFont, Brushes.Black, x, y)
+                x += column.Width
+            ElseIf column.Name = "Quantity" Then
+                e.Graphics.DrawString(totalquantity.ToString(), cellFont, Brushes.Black, x, y)
+                x += column.Width * 2
+                e.Graphics.DrawString(totalAmount.ToString("C"), cellFont, Brushes.Black, x, y)
+            Else
+                x += column.Width
+            End If
+        Next
+
+        e.Graphics.DrawString("Bill Summary", headerFont, Brushes.Black, New PointF(50, 20))
+        Dim footerFont As New Font("Arial", 8)
+        Dim footerText As String = $"Printed on: {DateTime.Now}"
+        e.Graphics.DrawString(footerText, footerFont, Brushes.Gray, New PointF(50, e.PageBounds.Bottom - 40))
 
     End Sub
 

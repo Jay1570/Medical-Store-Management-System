@@ -26,7 +26,7 @@ Public Class frmInsertDialog
 
         For Each field As String In fieldsList
 
-            If field = "Stock" Or field = "Date" Then
+            If field = "Stock" Or field = "Date" Or field = "Amount" Then
                 Continue For
             End If
 

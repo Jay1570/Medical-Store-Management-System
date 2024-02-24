@@ -39,17 +39,19 @@ Public Class frmPurchase
         If insert.ShowDialog() = DialogResult.OK Then
             values.Clear()
             values = insert.InsertValues
-            Dim pid, stock, sid As Integer
+            Dim pid, stock, sid, price As Integer
             Try
 
                 conn.Open()
-                cmd = New OleDbCommand("SELECT Id,Stock FROM Products WHERE [Name] = @name", conn)
+                cmd = New OleDbCommand("SELECT Id,Stock,price FROM Products WHERE [Name] = @name", conn)
                 cmd.Parameters.AddWithValue("@name", values(0))
                 Dim reader As OleDbDataReader = cmd.ExecuteReader()
                 If (reader.Read()) Then
                     pid = Val(reader("Id").ToString())
                     stock = Val(reader("Stock").ToString())
+                    price = Val(reader("Price").ToString())
                 End If
+                price = price - (price * 0.4)
                 cmd = New OleDbCommand("SELECT Id FROM Supplier WHERE [Name] = @sname", conn)
                 cmd.Parameters.AddWithValue("@sname", values(1))
                 sid = Val(cmd.ExecuteScalar().ToString())
@@ -62,7 +64,7 @@ Public Class frmPurchase
                 cmd.Parameters.AddWithValue("@sid", sid)
                 cmd.Parameters.AddWithValue("@date", DateTime.Today)
                 cmd.Parameters.AddWithValue("@quantity", values(2))
-                cmd.Parameters.AddWithValue("@amount", values(3))
+                cmd.Parameters.AddWithValue("@amount", values(2) * price)
                 cmd.ExecuteNonQuery()
                 MessageBox.Show("Inserted Successfully")
                 conn.Close()
