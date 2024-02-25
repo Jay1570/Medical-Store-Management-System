@@ -10,13 +10,14 @@ Public Class frmSupplier
     Dim selectedFields As New List(Of String)
     Dim values As New List(Of String)
 
-    Private Sub frmSupplier_Show(sender As Object, e As EventArgs) Handles MyBase.Shown
+    Private Sub frmSupplier_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
         showdata()
         fields.Add("Name")
         fields.Add("Contact")
         fields.Add("City")
+        Show()
 
     End Sub
 

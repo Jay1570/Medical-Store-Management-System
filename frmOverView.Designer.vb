@@ -22,27 +22,37 @@ Partial Class frmOverView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOverView))
         panelQuantity = New Panel()
+        lblSales = New Label()
+        Label1 = New Label()
         panelSale = New Panel()
+        Label4 = New Label()
+        Label3 = New Label()
         panelPurchase = New Panel()
+        Label6 = New Label()
+        Label5 = New Label()
         Panel7 = New Panel()
         Label2 = New Label()
         labelTopPrice1 = New Label()
         panelTop1 = New Panel()
         Panel9 = New Panel()
+        labelTopName1 = New Label()
         labelTopPrice2 = New Label()
         Panel1 = New Panel()
         Panel2 = New Panel()
+        labelTopName2 = New Label()
         labelTopPrice3 = New Label()
         Panel3 = New Panel()
         Panel4 = New Panel()
+        labelTopName3 = New Label()
         labelTopPrice4 = New Label()
         Panel5 = New Panel()
         Panel6 = New Panel()
-        labelTopName1 = New Label()
-        labelTopName2 = New Label()
-        labelTopName3 = New Label()
         labelTopName4 = New Label()
+        panelQuantity.SuspendLayout()
+        panelSale.SuspendLayout()
+        panelPurchase.SuspendLayout()
         panelTop1.SuspendLayout()
         Panel9.SuspendLayout()
         Panel1.SuspendLayout()
@@ -56,29 +66,98 @@ Partial Class frmOverView
         ' panelQuantity
         ' 
         panelQuantity.BackColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
+        panelQuantity.Controls.Add(lblSales)
+        panelQuantity.Controls.Add(Label1)
         panelQuantity.Location = New Point(30, 30)
         panelQuantity.Name = "panelQuantity"
         panelQuantity.Padding = New Padding(30)
         panelQuantity.Size = New Size(300, 200)
         panelQuantity.TabIndex = 1
         ' 
+        ' lblSales
+        ' 
+        lblSales.Font = New Font("Segoe UI", 14F)
+        lblSales.ForeColor = Color.White
+        lblSales.Location = New Point(50, 91)
+        lblSales.Name = "lblSales"
+        lblSales.Size = New Size(200, 38)
+        lblSales.TabIndex = 1
+        lblSales.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 16F)
+        Label1.ForeColor = Color.White
+        Label1.Location = New Point(10, 10)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(92, 45)
+        Label1.TabIndex = 0
+        Label1.Text = "Sales"
+        ' 
         ' panelSale
         ' 
         panelSale.BackColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
+        panelSale.Controls.Add(Label4)
+        panelSale.Controls.Add(Label3)
         panelSale.Location = New Point(350, 30)
         panelSale.Name = "panelSale"
         panelSale.Padding = New Padding(30)
         panelSale.Size = New Size(300, 200)
         panelSale.TabIndex = 2
         ' 
+        ' Label4
+        ' 
+        Label4.Font = New Font("Segoe UI", 14F)
+        Label4.ForeColor = Color.White
+        Label4.Location = New Point(50, 91)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(200, 38)
+        Label4.TabIndex = 2
+        Label4.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI", 16F)
+        Label3.ForeColor = Color.White
+        Label3.Location = New Point(10, 10)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(147, 45)
+        Label3.TabIndex = 1
+        Label3.Text = "Purchase"
+        ' 
         ' panelPurchase
         ' 
         panelPurchase.BackColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
+        panelPurchase.Controls.Add(Label6)
+        panelPurchase.Controls.Add(Label5)
         panelPurchase.Location = New Point(670, 30)
         panelPurchase.Name = "panelPurchase"
         panelPurchase.Padding = New Padding(30)
         panelPurchase.Size = New Size(300, 200)
         panelPurchase.TabIndex = 3
+        ' 
+        ' Label6
+        ' 
+        Label6.Font = New Font("Segoe UI", 14F)
+        Label6.ForeColor = Color.White
+        Label6.Location = New Point(50, 91)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(200, 38)
+        Label6.TabIndex = 3
+        Label6.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Segoe UI", 16F)
+        Label5.ForeColor = Color.White
+        Label5.Location = New Point(10, 10)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(233, 45)
+        Label5.TabIndex = 2
+        Label5.Text = "Stock Available"
         ' 
         ' Panel7
         ' 
@@ -115,10 +194,11 @@ Partial Class frmOverView
         ' panelTop1
         ' 
         panelTop1.BackColor = Color.Tan
+        panelTop1.BackgroundImage = CType(resources.GetObject("panelTop1.BackgroundImage"), Image)
         panelTop1.Controls.Add(labelTopPrice1)
         panelTop1.Location = New Point(63, 370)
         panelTop1.Name = "panelTop1"
-        panelTop1.Size = New Size(200, 207)
+        panelTop1.Size = New Size(200, 200)
         panelTop1.TabIndex = 0
         ' 
         ' Panel9
@@ -132,6 +212,15 @@ Partial Class frmOverView
         Panel9.Size = New Size(200, 375)
         Panel9.TabIndex = 7
         ' 
+        ' labelTopName1
+        ' 
+        labelTopName1.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
+        labelTopName1.Location = New Point(22, 271)
+        labelTopName1.Name = "labelTopName1"
+        labelTopName1.Size = New Size(157, 45)
+        labelTopName1.TabIndex = 1
+        labelTopName1.Text = "Price1"
+        ' 
         ' labelTopPrice2
         ' 
         labelTopPrice2.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
@@ -144,10 +233,11 @@ Partial Class frmOverView
         ' Panel1
         ' 
         Panel1.BackColor = Color.Tan
+        Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), Image)
         Panel1.Controls.Add(labelTopPrice2)
         Panel1.Location = New Point(288, 370)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(200, 207)
+        Panel1.Size = New Size(200, 200)
         Panel1.TabIndex = 0
         ' 
         ' Panel2
@@ -161,6 +251,15 @@ Partial Class frmOverView
         Panel2.Size = New Size(200, 375)
         Panel2.TabIndex = 8
         ' 
+        ' labelTopName2
+        ' 
+        labelTopName2.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
+        labelTopName2.Location = New Point(22, 271)
+        labelTopName2.Name = "labelTopName2"
+        labelTopName2.Size = New Size(157, 45)
+        labelTopName2.TabIndex = 2
+        labelTopName2.Text = "Price1"
+        ' 
         ' labelTopPrice3
         ' 
         labelTopPrice3.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
@@ -173,10 +272,11 @@ Partial Class frmOverView
         ' Panel3
         ' 
         Panel3.BackColor = Color.Tan
+        Panel3.BackgroundImage = CType(resources.GetObject("Panel3.BackgroundImage"), Image)
         Panel3.Controls.Add(labelTopPrice3)
         Panel3.Location = New Point(0, 50)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(200, 207)
+        Panel3.Size = New Size(200, 200)
         Panel3.TabIndex = 0
         ' 
         ' Panel4
@@ -191,6 +291,15 @@ Partial Class frmOverView
         Panel4.Size = New Size(200, 375)
         Panel4.TabIndex = 9
         ' 
+        ' labelTopName3
+        ' 
+        labelTopName3.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
+        labelTopName3.Location = New Point(22, 271)
+        labelTopName3.Name = "labelTopName3"
+        labelTopName3.Size = New Size(157, 45)
+        labelTopName3.TabIndex = 3
+        labelTopName3.Text = "Price1"
+        ' 
         ' labelTopPrice4
         ' 
         labelTopPrice4.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
@@ -203,10 +312,11 @@ Partial Class frmOverView
         ' Panel5
         ' 
         Panel5.BackColor = Color.Tan
+        Panel5.BackgroundImage = CType(resources.GetObject("Panel5.BackgroundImage"), Image)
         Panel5.Controls.Add(labelTopPrice4)
         Panel5.Location = New Point(0, 50)
         Panel5.Name = "Panel5"
-        Panel5.Size = New Size(200, 207)
+        Panel5.Size = New Size(200, 200)
         Panel5.TabIndex = 0
         ' 
         ' Panel6
@@ -221,41 +331,13 @@ Partial Class frmOverView
         Panel6.Size = New Size(200, 375)
         Panel6.TabIndex = 8
         ' 
-        ' labelTopName1
-        ' 
-        labelTopName1.BackColor = Color.Transparent
-        labelTopName1.Location = New Point(22, 271)
-        labelTopName1.Name = "labelTopName1"
-        labelTopName1.Size = New Size(157, 45)
-        labelTopName1.TabIndex = 1
-        labelTopName1.Text = "Price1"
-        ' 
-        ' labelTopName2
-        ' 
-        labelTopName2.BackColor = Color.Transparent
-        labelTopName2.Location = New Point(22, 271)
-        labelTopName2.Name = "labelTopName2"
-        labelTopName2.Size = New Size(157, 45)
-        labelTopName2.TabIndex = 2
-        labelTopName2.Text = "Price1"
-        ' 
-        ' labelTopName3
-        ' 
-        labelTopName3.BackColor = Color.Transparent
-        labelTopName3.Location = New Point(22, 271)
-        labelTopName3.Name = "labelTopName3"
-        labelTopName3.Size = New Size(157, 45)
-        labelTopName3.TabIndex = 3
-        labelTopName3.Text = "Price1"
-        ' 
         ' labelTopName4
         ' 
-        labelTopName4.BackColor = Color.Transparent
+        labelTopName4.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         labelTopName4.Location = New Point(22, 271)
         labelTopName4.Name = "labelTopName4"
         labelTopName4.Size = New Size(157, 45)
         labelTopName4.TabIndex = 4
-        labelTopName4.Text = "Price1"
         ' 
         ' frmOverView
         ' 
@@ -278,6 +360,12 @@ Partial Class frmOverView
         Name = "frmOverView"
         Text = "frmOverView"
         WindowState = FormWindowState.Maximized
+        panelQuantity.ResumeLayout(False)
+        panelQuantity.PerformLayout()
+        panelSale.ResumeLayout(False)
+        panelSale.PerformLayout()
+        panelPurchase.ResumeLayout(False)
+        panelPurchase.PerformLayout()
         panelTop1.ResumeLayout(False)
         Panel9.ResumeLayout(False)
         Panel1.ResumeLayout(False)
@@ -311,4 +399,10 @@ Partial Class frmOverView
     Friend WithEvents labelTopName2 As Label
     Friend WithEvents labelTopName3 As Label
     Friend WithEvents labelTopName4 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblSales As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
 End Class

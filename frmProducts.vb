@@ -10,7 +10,7 @@ Public Class frmProducts
     Dim selectedFields As New List(Of String)
     Dim values As New List(Of String)
 
-    Private Sub frmProducts_Show(sender As Object, e As EventArgs) Handles MyBase.Shown
+    Private Sub frmProducts_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
         showdata()
@@ -18,6 +18,7 @@ Public Class frmProducts
         fields.Add("Category")
         fields.Add("Price")
         fields.Add("Stock")
+        Show()
 
     End Sub
 

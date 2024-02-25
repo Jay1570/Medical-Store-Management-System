@@ -124,8 +124,10 @@ Public Class frmInsertSaleItems
         If totalAmount = 0 Then
             Return
         End If
+
         Dim print As New PrintPreviewDialog()
         Dim printDocument As New Printing.PrintDocument()
+        printDocument.DefaultPageSettings.PaperSize = New Printing.PaperSize("A4", 827, 1169)
         AddHandler printDocument.PrintPage, AddressOf PrintDocument_PrintPage
         print.Document = printDocument
         print.ShowDialog()
@@ -162,7 +164,7 @@ Public Class frmInsertSaleItems
 
         DataGridView1.ClearSelection()
 
-        Dim printArea As New Rectangle(50, 50, e.PageBounds.Width - 100, e.PageBounds.Height - 100)
+        Dim printArea As New Rectangle(e.MarginBounds.Left, e.MarginBounds.Top, e.PageBounds.Width - 100, e.PageBounds.Height - 100)
         Dim headerFont As New Font("Arial", 10, FontStyle.Bold)
         Dim cellFont As New Font("Arial", 9)
         Dim cellPadding As Integer = 5
@@ -204,6 +206,11 @@ Public Class frmInsertSaleItems
 
     End Sub
 
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+
+        Close()
+
+    End Sub
 End Class
 
 Public Class BillItem

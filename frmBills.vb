@@ -10,12 +10,13 @@ Public Class frmBills
     Dim selectedFields As New List(Of String)
     Dim values As New List(Of String)
 
-    Private Sub frmBills_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+    Private Sub frmBills_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
         showdata()
         fields.Add("Date")
         fields.Add("Amount")
+        Show()
 
     End Sub
 
