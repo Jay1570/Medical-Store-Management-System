@@ -5,10 +5,11 @@ Public Class frmLogin
 
     Dim conn As New OleDbConnection
     Dim cmd As New OleDbCommand
+    Public empName As String
+    Public empType As String
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Focus()
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
 
     End Sub
@@ -16,18 +17,22 @@ Public Class frmLogin
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         Dim unm As String = txtUNM.Text
         Dim pass As String = txtPassword.Text
-        Dim query As String = "SELECT Designation,[Name] FROM Employee WHERE Username=@user_nm AND Password=@user_password"
-        conn.Open()
-        cmd = New OleDbCommand(query, conn)
-        cmd.Parameters.AddWithValue("@user_nm", unm)
-        cmd.Parameters.AddWithValue("@user_password", pass)
+        If unm.Equals("") OrElse pass.Equals("") Then
+            MsgBox("Please Enter Username Or Password", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
+            Return
+        End If
         Try
+            Dim query As String = "SELECT Designation,[Name] FROM Employee WHERE Username=@user_nm AND Password=@user_password"
+            conn.Open()
+            cmd = New OleDbCommand(query, conn)
+            cmd.Parameters.AddWithValue("@user_nm", unm)
+            cmd.Parameters.AddWithValue("@user_password", pass)
             Dim reader As OleDbDataReader = cmd.ExecuteReader()
             If reader.Read() Then
 
-                Dim empName As String = reader("Name").ToString()
-                Dim empType As String = reader("Designation").ToString()
-                Dim home As New frmHome()
+                empName = reader("Name").ToString()
+                empType = reader("Designation").ToString()
+                Dim home As New frmHome(empName, empType)
                 DialogResult = DialogResult.OK
                 conn.Close()
                 home.Show()
@@ -35,24 +40,26 @@ Public Class frmLogin
 
             Else
 
-                DialogResult = DialogResult.Cancel
-                MessageBox.Show("Invalid username or password.", "Error!")
-                'Dim home As New frmHome()
-                'home.Show()
-                'Close()
+                MsgBox("Invalid username or password.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End If
 
-        Catch
+        Catch ex As Exception
 
-            MessageBox.Show("Error")
+            MsgBox(ex.ToString(), MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
+
+        Finally
+
+            conn.Close()
 
         End Try
 
     End Sub
 
     Private Sub btnCLose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClose.Click
+
         Close()
+
     End Sub
 
 End Class

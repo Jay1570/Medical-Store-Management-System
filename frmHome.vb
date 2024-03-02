@@ -2,15 +2,27 @@
 
 Public Class frmHome
 
+    Public Property empName As String
+    Public Property empType As String
+    Dim overview As New frmOverView(empName)
+
+    Public Sub New(Optional name As String = "", Optional type As String = "")
+
+        InitializeComponent()
+        empName = name
+        empType = type
+
+    End Sub
+
     Private Sub frmHome_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         Me.Activate()
         Me.CenterToScreen()
-        With frmOverView
+        overview = New frmOverView(empName)
+        With overview
 
-            AddHandler frmOverView.Load, AddressOf FormToShow_Load
             .TopLevel = False
-            Panel3.Controls.Add(frmOverView)
+            Panel3.Controls.Add(overview)
             .BringToFront()
             .Show()
 
@@ -28,14 +40,14 @@ Public Class frmHome
 
         With frmEmployee
 
-            AddHandler frmEmployee.Load, AddressOf FormToShow_Load
             .TopLevel = False
             Panel3.Controls.Add(frmEmployee)
             .BringToFront()
             .Show()
 
         End With
-        frmOverView.Close()
+
+        overview.Close()
         frmProducts.Close()
         frmSupplier.Close()
         frmPurchase.Close()
@@ -46,28 +58,22 @@ Public Class frmHome
 
     Private Sub btnOverView_Click(sender As Object, e As EventArgs) Handles btnOverView.Click
 
+        overview = New frmOverView(empName)
+        With overview
+
+            .TopLevel = False
+            Panel3.Controls.Add(overview)
+            .BringToFront()
+            .Show()
+
+        End With
+
         frmEmployee.Close()
         frmProducts.Close()
         frmSupplier.Close()
         frmPurchase.Close()
         frmBills.Close()
         frmSales.Close()
-        If frmOverView.IsHandleCreated Then
-            ' If the form is already loaded, just show it in Panel3
-            Panel3.Visible = False ' Hide other panels
-            frmOverView.TopLevel = False
-            Panel3.Controls.Add(frmOverView)
-            frmOverView.BringToFront()
-            frmOverView.Show()
-            Panel3.Visible = True
-        Else
-            Panel3.Visible = False
-            frmOverView.TopLevel = False
-            Panel3.Controls.Add(frmOverView)
-            frmOverView.BringToFront()
-            frmOverView.Show()
-            Panel3.Visible = True
-        End If
 
     End Sub
 
@@ -75,7 +81,6 @@ Public Class frmHome
 
         With frmProducts
 
-            AddHandler frmProducts.Load, AddressOf FormToShow_Load
             .TopLevel = False
             Panel3.Controls.Add(frmProducts)
             .BringToFront()
@@ -83,7 +88,7 @@ Public Class frmHome
 
         End With
 
-        frmOverView.Close()
+        overview.Close()
         frmEmployee.Close()
         frmSupplier.Close()
         frmPurchase.Close()
@@ -96,7 +101,6 @@ Public Class frmHome
 
         With frmSupplier
 
-            AddHandler frmSupplier.Load, AddressOf FormToShow_Load
             .TopLevel = False
             Panel3.Controls.Add(frmSupplier)
             .BringToFront()
@@ -104,7 +108,7 @@ Public Class frmHome
 
         End With
 
-        frmOverView.Close()
+        overview.Close()
         frmEmployee.Close()
         frmProducts.Close()
         frmPurchase.Close()
@@ -117,7 +121,6 @@ Public Class frmHome
 
         With frmPurchase
 
-            AddHandler frmPurchase.Load, AddressOf FormToShow_Load
             .TopLevel = False
             Panel3.Controls.Add(frmPurchase)
             .BringToFront()
@@ -125,7 +128,7 @@ Public Class frmHome
 
         End With
 
-        frmOverView.Close()
+        overview.Close()
         frmEmployee.Close()
         frmProducts.Close()
         frmSupplier.Close()
@@ -136,7 +139,6 @@ Public Class frmHome
 
     Private Sub btnBills_Click(sender As Object, e As EventArgs) Handles btnBills.Click
 
-        AddHandler frmBills.Load, AddressOf FormToShow_Load
         With frmBills
 
             .TopLevel = False
@@ -147,7 +149,7 @@ Public Class frmHome
         End With
 
         frmPurchase.Close()
-        frmOverView.Close()
+        overview.Close()
         frmEmployee.Close()
         frmProducts.Close()
         frmSupplier.Close()
@@ -159,7 +161,6 @@ Public Class frmHome
 
         With frmSales
 
-            AddHandler frmSales.Load, AddressOf FormToShow_Load
             .TopLevel = False
             Panel3.Controls.Add(frmSales)
             .BringToFront()
@@ -168,7 +169,7 @@ Public Class frmHome
         End With
 
         frmPurchase.Close()
-        frmOverView.Close()
+        overview.Close()
         frmEmployee.Close()
         frmProducts.Close()
         frmSupplier.Close()
@@ -178,7 +179,7 @@ Public Class frmHome
 
     Private Sub frmHome_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
 
-        frmOverView.Close()
+        overview.Close()
         frmEmployee.Close()
         frmProducts.Close()
         frmSupplier.Close()
@@ -186,10 +187,6 @@ Public Class frmHome
         frmBills.Close()
         frmSales.Close()
 
-    End Sub
-
-    Private Sub FormToShow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Panel3.Visible = True
     End Sub
 
 End Class

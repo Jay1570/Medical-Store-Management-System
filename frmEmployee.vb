@@ -50,14 +50,14 @@ Public Class frmEmployee
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Employee data inserted successfully!")
+                MsgBox("Employee data inserted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                 conn.Close()
                 showdata()
 
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error inserting employee data: " & ex.Message)
+                MsgBox("Error inserting employee data: " & ex.Message)
 
             End Try
 
@@ -95,16 +95,16 @@ Public Class frmEmployee
                 Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
                 conn.Close()
                 If rowsAffected > 0 Then
-                    MessageBox.Show("Employee data updated successfully!")
+                    MsgBox("Employee data updated successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                     showdata()
                 Else
-                    MessageBox.Show("No records were updated.")
+                    MsgBox("No records were updated.")
                 End If
 
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error Updating employee data: " & ex.Message)
+                MsgBox("Error Updating employee data: " & ex.Message)
 
             End Try
 
@@ -135,14 +135,14 @@ Public Class frmEmployee
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Employee data Deleted successfully!")
+                MsgBox("Employee data Deleted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                 conn.Close()
                 showdata()
 
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error Deleting employee data: " & ex.Message)
+                MsgBox("Error Deleting employee data: " & ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
 
@@ -185,7 +185,7 @@ Public Class frmEmployee
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error Displaying employee data: " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
         End If
