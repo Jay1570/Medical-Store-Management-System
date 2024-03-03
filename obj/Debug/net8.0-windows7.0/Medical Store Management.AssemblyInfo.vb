@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("Medical Store Management"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+deddc607ca9cf148dd86f312d38bfeaeb0314a7b"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87a2524995a4ba7359af91051a865c362f935f5b"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("Medical Store Management"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("Medical Store Management"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _

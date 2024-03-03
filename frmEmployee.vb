@@ -12,10 +12,10 @@ Public Class frmEmployee
 
     Private Sub frmEmployee_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Medical Store Management System.accdb"
         showdata()
-        fields.Add("Name")
         fields.Add("Username")
+        fields.Add("Name")
         fields.Add("Password")
         fields.Add("Salary")
         fields.Add("Designation")
@@ -26,7 +26,7 @@ Public Class frmEmployee
     Sub showdata()
 
         ds.Clear()
-        adp = New OleDbDataAdapter("SELECT Username,[Name],Salary,Designation FROM Employee", conn)
+        adp = New OleDbDataAdapter("SELECT Username,[Name],Password,Salary,Designation FROM Employee", conn)
         adp.Fill(ds, "Employee")
         dgvEmployee.DataSource = ds.Tables("Employee")
 
@@ -57,7 +57,7 @@ Public Class frmEmployee
             Catch ex As Exception
 
                 conn.Close()
-                MsgBox("Error inserting employee data: " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
 
@@ -98,13 +98,13 @@ Public Class frmEmployee
                     MsgBox("Employee data updated successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                     showdata()
                 Else
-                    MsgBox("No records were updated.")
+                    MsgBox("No records were updated.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
                 End If
 
             Catch ex As Exception
 
                 conn.Close()
-                MsgBox("Error Updating employee data: " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
 
@@ -118,20 +118,11 @@ Public Class frmEmployee
         If delete.ShowDialog() = DialogResult.OK Then
             values.Clear()
             selectedFields.Clear()
-            Dim query As String = "DELETE FROM Employee WHERE "
+            Dim query As String = "DELETE FROM Employee WHERE Username = "
             selectedFields = delete.SelectedFields
             values = delete.DeleteValues
             Try
-                For i As Integer = 0 To selectedFields.Count - 1
-                    If selectedFields(i).Contains("Salary") Then
-                        query &= selectedFields(i) & " = " & values(i) & " "
-                    Else
-                        query &= selectedFields(i) & " = " & "'" & values(i) & "' "
-                    End If
-                    If i < selectedFields.Count - 1 Then
-                        query &= " AND "
-                    End If
-                Next
+                query &= "'" & values(0) & "'"
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()
@@ -142,7 +133,7 @@ Public Class frmEmployee
             Catch ex As Exception
 
                 conn.Close()
-                MsgBox("Error Deleting employee data: " & ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
 
@@ -165,7 +156,7 @@ Public Class frmEmployee
 
             Try
 
-                Dim query As String = "SELECT Username,[Name],Salary,Designation FROM Employee WHERE "
+                Dim query As String = "SELECT Username,[Name],Password,Salary,Designation FROM Employee WHERE "
                 For i As Integer = 0 To selectedFields.Count - 1
                     If selectedFields(i).Contains("Salary") Then
                         query &= selectedFields(i) & " " & comparativeOperator(j) & " " & values(i) & " "

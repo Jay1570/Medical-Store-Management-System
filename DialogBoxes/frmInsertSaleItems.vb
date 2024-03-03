@@ -16,7 +16,7 @@ Public Class frmInsertSaleItems
 
         InitializeComponent()
 
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Medical Store Management System.accdb"
         adp = New OleDbDataAdapter("SELECT [Name] From Products", conn)
         adp.Fill(ds)
         For Each row As DataRow In ds.Tables(0).Rows
@@ -69,7 +69,7 @@ Public Class frmInsertSaleItems
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         If cmbProducts.SelectedIndex.Equals(-1) Then
-            MessageBox.Show("Please Select Product.")
+            MsgBox("Please Select Product", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
             Return
         End If
         Dim pname As String = cmbProducts.SelectedItem.ToString()
@@ -78,14 +78,14 @@ Public Class frmInsertSaleItems
         Dim price As Decimal = Val(lblPrice.Text())
 
 
-        If quantity <= 0 Then
+        If quantity <= 0 OrElse txtQuantity.Text.Equals("") Then
 
-            MessageBox.Show("Quantity should be greater than zero.")
+            MsgBox("Quantity must be Greater Than 0", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
             Return
 
         ElseIf quantity > Val(lblQuantity.Text) Then
 
-            MessageBox.Show("Quantity should be less than availble Stock.")
+            MsgBox("Quantity must be Less Than Available Stock", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
             Return
 
         End If
@@ -108,7 +108,7 @@ Public Class frmInsertSaleItems
             currentBill.RemoveAt(rowIndex)
             UpdateUI()
         Else
-            MessageBox.Show("Please select a row to remove.")
+            MsgBox("Please Select Row to Remove...", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
         End If
 
     End Sub
@@ -122,6 +122,7 @@ Public Class frmInsertSaleItems
 
         Next
         If totalAmount = 0 Then
+            MsgBox("All Fields Are Mandatory!!!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
             Return
         End If
 
@@ -131,7 +132,6 @@ Public Class frmInsertSaleItems
         AddHandler printDocument.PrintPage, AddressOf PrintDocument_PrintPage
         print.Document = printDocument
         print.ShowDialog()
-
 
         Try
             conn.Open()
@@ -153,7 +153,7 @@ Public Class frmInsertSaleItems
             conn.Close()
         Catch ex As Exception
             conn.Close()
-            MessageBox.Show("Error :- " & ex.Message)
+            MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
         End Try
         DialogResult = DialogResult.OK
         Close()
@@ -211,6 +211,7 @@ Public Class frmInsertSaleItems
         Close()
 
     End Sub
+
 End Class
 
 Public Class BillItem

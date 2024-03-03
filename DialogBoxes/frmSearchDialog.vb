@@ -87,6 +87,23 @@
         SelectedFields.Clear()
         SearchValues.Clear()
         Dim i As Integer = 0
+        Dim count As Integer = 0
+
+        For Each fieldPanel As Control In FlowLayoutPanel1.Controls
+
+            If TypeOf fieldPanel Is FlowLayoutPanel Then
+                For Each ctrl As Control In fieldPanel.Controls
+
+                    If TypeOf ctrl Is CheckBox AndAlso DirectCast(ctrl, CheckBox).Checked Then
+                        count += 1
+                    End If
+                Next
+            End If
+        Next
+        If count = 0 Then
+            MsgBox("Please Select atleast one field", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
+            Return
+        End If
         For Each fieldPanel As Control In FlowLayoutPanel1.Controls
 
             If TypeOf fieldPanel Is FlowLayoutPanel Then
@@ -101,6 +118,10 @@
                         For Each txt As Control In fieldPanel.Controls
 
                             If TypeOf txt Is TextBox AndAlso txt.Name = relatedTextBox Then
+                                If txt.Text.Equals("") Then
+                                    MsgBox("Please Enter Value", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
+                                    Return
+                                End If
                                 SearchValues.Add(txt.Text)
                             End If
 

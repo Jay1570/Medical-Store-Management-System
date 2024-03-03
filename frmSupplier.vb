@@ -12,7 +12,7 @@ Public Class frmSupplier
 
     Private Sub frmSupplier_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Medical Store Management System.accdb"
         showdata()
         fields.Add("Name")
         fields.Add("Contact")
@@ -48,14 +48,14 @@ Public Class frmSupplier
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Supplier data inserted successfully!")
+                MsgBox("Inserted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                 conn.Close()
                 showdata()
 
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error inserting Supplier data: " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
 
@@ -93,7 +93,7 @@ Public Class frmSupplier
                 Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
                 conn.Close()
                 If rowsAffected > 0 Then
-                    MessageBox.Show("Supplier data updated successfully!")
+                    MsgBox("Updated successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                     showdata()
                 Else
                     MessageBox.Show("No records were updated.")
@@ -102,7 +102,7 @@ Public Class frmSupplier
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error Updating Supplier data: " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
 
@@ -133,14 +133,14 @@ Public Class frmSupplier
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Supplier data Deleted successfully!")
+                MsgBox("Deleted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                 conn.Close()
                 showdata()
 
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error Deleting Supplier data: " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
 
@@ -183,7 +183,7 @@ Public Class frmSupplier
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error Displaying Supplier data: " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
         End If

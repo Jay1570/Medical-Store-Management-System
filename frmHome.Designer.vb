@@ -23,6 +23,7 @@ Partial Class frmHome
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
+        btnLogout = New Button()
         btnSales = New Button()
         btnClose = New Button()
         btnPurchase = New Button()
@@ -42,6 +43,7 @@ Partial Class frmHome
         ' Panel1
         ' 
         Panel1.BackColor = SystemColors.MenuHighlight
+        Panel1.Controls.Add(btnLogout)
         Panel1.Controls.Add(btnSales)
         Panel1.Controls.Add(btnClose)
         Panel1.Controls.Add(btnPurchase)
@@ -58,6 +60,23 @@ Partial Class frmHome
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(250, 750)
         Panel1.TabIndex = 0
+        ' 
+        ' btnLogout
+        ' 
+        btnLogout.BackColor = SystemColors.MenuHighlight
+        btnLogout.Cursor = Cursors.Hand
+        btnLogout.FlatAppearance.BorderSize = 0
+        btnLogout.FlatStyle = FlatStyle.Flat
+        btnLogout.Font = New Font("Segoe UI", 12F)
+        btnLogout.ForeColor = Color.White
+        btnLogout.Location = New Point(0, 604)
+        btnLogout.Name = "btnLogout"
+        btnLogout.Padding = New Padding(10, 0, 0, 0)
+        btnLogout.Size = New Size(250, 60)
+        btnLogout.TabIndex = 11
+        btnLogout.Text = "Log Out"
+        btnLogout.TextAlign = ContentAlignment.MiddleLeft
+        btnLogout.UseVisualStyleBackColor = False
         ' 
         ' btnSales
         ' 
@@ -84,7 +103,7 @@ Partial Class frmHome
         btnClose.FlatStyle = FlatStyle.Flat
         btnClose.Font = New Font("Segoe UI", 12F)
         btnClose.ForeColor = Color.White
-        btnClose.Location = New Point(0, 604)
+        btnClose.Location = New Point(0, 664)
         btnClose.Name = "btnClose"
         btnClose.Padding = New Padding(10, 0, 0, 0)
         btnClose.Size = New Size(250, 60)
@@ -264,4 +283,5 @@ Partial Class frmHome
     Friend WithEvents btnSupplier As Button
     Friend WithEvents btnClose As Button
     Friend WithEvents btnSales As Button
+    Friend WithEvents btnLogout As Button
 End Class

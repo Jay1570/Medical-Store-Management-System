@@ -11,7 +11,7 @@ Public Class frmPurchase
 
     Private Sub frmEmployee_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Medical Store Management System.accdb"
         showdata()
         fields.Add("Product Name")
         fields.Add("Supplier Name")
@@ -67,14 +67,14 @@ Public Class frmPurchase
                 cmd.Parameters.AddWithValue("@quantity", values(2))
                 cmd.Parameters.AddWithValue("@amount", values(2) * price)
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Inserted Successfully")
+                MsgBox("Inserted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                 conn.Close()
                 showdata()
 
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error :- " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
 
@@ -134,7 +134,7 @@ Public Class frmPurchase
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error :- " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
 

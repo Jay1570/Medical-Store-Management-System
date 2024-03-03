@@ -16,7 +16,7 @@ Public Class frmInsertDialog
 
 
         InitializeComponent()
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Medical Store Management System.accdb"
 
         Me.AutoSize = True
         Me.AutoSizeMode = AutoSizeMode.GrowOnly
@@ -82,9 +82,17 @@ Public Class frmInsertDialog
             If TypeOf fieldPanel Is FlowLayoutPanel Then
                 For Each ctrl As Control In fieldPanel.Controls
                     If TypeOf ctrl Is TextBox Then
-                        InsertValues.Add(ctrl.Text)
+                        If ctrl.Text.Equals("") Then
+                            MsgBox("Please Enter Value", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
+                            Return
+                        End If
+                        InsertValues.Add(ctrl.Text.ToString())
                     End If
                     If TypeOf ctrl Is ComboBox Then
+                        If DirectCast(ctrl, ComboBox).SelectedIndex.Equals(-1) Then
+                            MsgBox("Please Select Values From dropdown list", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
+                            Return
+                        End If
                         InsertValues.Add(DirectCast(ctrl, ComboBox).SelectedItem.ToString())
                     End If
                 Next

@@ -12,7 +12,7 @@ Public Class frmProducts
 
     Private Sub frmProducts_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Medical Store Management System.accdb"
         showdata()
         fields.Add("Name")
         fields.Add("Category")
@@ -49,14 +49,14 @@ Public Class frmProducts
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Product data inserted successfully!")
+                MsgBox("Employee data inserted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                 conn.Close()
                 showdata()
 
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error inserting Product data: " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
 
@@ -94,16 +94,16 @@ Public Class frmProducts
                 Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
                 conn.Close()
                 If rowsAffected > 0 Then
-                    MessageBox.Show("Product data updated successfully!")
+                    MsgBox("Employee data updated successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                     showdata()
                 Else
-                    MessageBox.Show("No records were updated.")
+                    MsgBox("No Record was updated", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                 End If
 
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error Updating Product data: " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
 
@@ -117,31 +117,22 @@ Public Class frmProducts
         If delete.ShowDialog() = DialogResult.OK Then
             values.Clear()
             selectedFields.Clear()
-            Dim query As String = "DELETE FROM Products WHERE "
+            Dim query As String = "DELETE FROM Products WHERE [Name] = "
             selectedFields = delete.SelectedFields
             values = delete.DeleteValues
             Try
-                For i As Integer = 0 To selectedFields.Count - 1
-                    If selectedFields(i).Contains("Price") Or selectedFields(i).Contains("Stock") Then
-                        query &= selectedFields(i) & " = " & values(i) & " "
-                    Else
-                        query &= selectedFields(i) & " = " & "'" & values(i) & "' "
-                    End If
-                    If i < selectedFields.Count - 1 Then
-                        query &= " AND "
-                    End If
-                Next
+                query &= values(0)
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Product data Deleted successfully!")
+                MsgBox("Employee data deleted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                 conn.Close()
                 showdata()
 
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error Deleting Product data: " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
 
@@ -184,7 +175,7 @@ Public Class frmProducts
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error Displaying Product data: " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
         End If

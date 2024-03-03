@@ -12,7 +12,7 @@ Public Class frmSales
 
     Private Sub frmSales_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Medical Store Management System\My Project\Medical Store Management System.accdb"
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Medical Store Management System.accdb"
         showdata()
         fields.Add("Sale Id")
         fields.Add("Product Name")
@@ -73,7 +73,7 @@ Public Class frmSales
             Catch ex As Exception
 
                 conn.Close()
-                MessageBox.Show("Error :- " & ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
 
             End Try
 

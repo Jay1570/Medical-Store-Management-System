@@ -2,8 +2,8 @@
 
 Public Class frmHome
 
-    Public Property empName As String
-    Public Property empType As String
+    Dim empName As String
+    Dim empType As String
     Dim overview As New frmOverView(empName)
 
     Public Sub New(Optional name As String = "", Optional type As String = "")
@@ -37,23 +37,26 @@ Public Class frmHome
     End Sub
 
     Private Sub btnEmployee_Click(sender As Object, e As EventArgs) Handles btnEmployee.Click
+        If empType.Equals("Admin") Then
 
-        With frmEmployee
+            With frmEmployee
 
-            .TopLevel = False
-            Panel3.Controls.Add(frmEmployee)
-            .BringToFront()
-            .Show()
+                .TopLevel = False
+                Panel3.Controls.Add(frmEmployee)
+                .BringToFront()
+                .Show()
 
-        End With
+            End With
 
-        overview.Close()
-        frmProducts.Close()
-        frmSupplier.Close()
-        frmPurchase.Close()
-        frmBills.Close()
-        frmSales.Close()
-
+            overview.Close()
+            frmProducts.Close()
+            frmSupplier.Close()
+            frmPurchase.Close()
+            frmBills.Close()
+            frmSales.Close()
+        Else
+            MsgBox("Only Admins can access this section", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
+        End If
     End Sub
 
     Private Sub btnOverView_Click(sender As Object, e As EventArgs) Handles btnOverView.Click
@@ -177,7 +180,7 @@ Public Class frmHome
 
     End Sub
 
-    Private Sub frmHome_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
+    Private Sub frmHome_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
 
         overview.Close()
         frmEmployee.Close()
@@ -186,6 +189,13 @@ Public Class frmHome
         frmPurchase.Close()
         frmBills.Close()
         frmSales.Close()
+
+    End Sub
+
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+
+        frmLogin.Show()
+        Close()
 
     End Sub
 

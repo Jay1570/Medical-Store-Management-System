@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "E:\\Medical Store Management System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|E:\\Medical Store Management System\\frmemployee.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\frmemployee.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:frmemployee.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\frmemployee.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:frmemployee.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\frmsupplier.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:frmsupplier.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,9 +44,34 @@
               "RelativeDocumentMoniker": "frmEmployee.vb",
               "ToolTip": "E:\\Medical Store Management System\\frmEmployee.vb",
               "RelativeToolTip": "frmEmployee.vb",
-              "ViewState": "AQIAALAAAAAAAAAAAAAuwLgAAAAhAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJ4AAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-02-24T09:29:55.881Z",
+              "WhenOpened": "2024-03-03T05:30:31.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmEmployee.vb [Design]",
+              "DocumentMoniker": "E:\\Medical Store Management System\\frmEmployee.vb",
+              "RelativeDocumentMoniker": "frmEmployee.vb",
+              "ToolTip": "E:\\Medical Store Management System\\frmEmployee.vb [Design]",
+              "RelativeToolTip": "frmEmployee.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-03T05:29:56.119Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmSupplier.vb",
+              "DocumentMoniker": "E:\\Medical Store Management System\\frmSupplier.vb",
+              "RelativeDocumentMoniker": "frmSupplier.vb",
+              "ToolTip": "E:\\Medical Store Management System\\frmSupplier.vb",
+              "RelativeToolTip": "frmSupplier.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAMQAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-03T05:22:19.594Z",
               "EditorCaption": ""
             }
           ]
