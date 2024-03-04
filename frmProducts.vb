@@ -121,11 +121,11 @@ Public Class frmProducts
             selectedFields = delete.SelectedFields
             values = delete.DeleteValues
             Try
-                query &= values(0)
+                query &= "'" & values(0) & "'"
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()
-                MsgBox("Employee data deleted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
+                MsgBox("Deleted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                 conn.Close()
                 showdata()
 

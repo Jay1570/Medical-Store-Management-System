@@ -33,11 +33,9 @@ Partial Class frmHome
         btnEmployee = New Button()
         btnOverView = New Button()
         Label1 = New Label()
-        PictureBox1 = New PictureBox()
         Panel2 = New Panel()
         Panel3 = New Panel()
         Panel1.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -53,7 +51,6 @@ Partial Class frmHome
         Panel1.Controls.Add(btnEmployee)
         Panel1.Controls.Add(btnOverView)
         Panel1.Controls.Add(Label1)
-        Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(Panel2)
         Panel1.Dock = DockStyle.Left
         Panel1.Location = New Point(0, 0)
@@ -69,11 +66,11 @@ Partial Class frmHome
         btnLogout.FlatStyle = FlatStyle.Flat
         btnLogout.Font = New Font("Segoe UI", 12F)
         btnLogout.ForeColor = Color.White
-        btnLogout.Location = New Point(0, 604)
+        btnLogout.Location = New Point(0, 570)
         btnLogout.Name = "btnLogout"
         btnLogout.Padding = New Padding(10, 0, 0, 0)
         btnLogout.Size = New Size(250, 60)
-        btnLogout.TabIndex = 11
+        btnLogout.TabIndex = 8
         btnLogout.Text = "Log Out"
         btnLogout.TextAlign = ContentAlignment.MiddleLeft
         btnLogout.UseVisualStyleBackColor = False
@@ -86,11 +83,11 @@ Partial Class frmHome
         btnSales.FlatStyle = FlatStyle.Flat
         btnSales.Font = New Font("Segoe UI", 12F)
         btnSales.ForeColor = Color.White
-        btnSales.Location = New Point(0, 544)
+        btnSales.Location = New Point(0, 510)
         btnSales.Name = "btnSales"
         btnSales.Padding = New Padding(10, 0, 0, 0)
         btnSales.Size = New Size(250, 60)
-        btnSales.TabIndex = 10
+        btnSales.TabIndex = 7
         btnSales.Text = "Sales"
         btnSales.TextAlign = ContentAlignment.MiddleLeft
         btnSales.UseVisualStyleBackColor = False
@@ -103,7 +100,7 @@ Partial Class frmHome
         btnClose.FlatStyle = FlatStyle.Flat
         btnClose.Font = New Font("Segoe UI", 12F)
         btnClose.ForeColor = Color.White
-        btnClose.Location = New Point(0, 664)
+        btnClose.Location = New Point(0, 630)
         btnClose.Name = "btnClose"
         btnClose.Padding = New Padding(10, 0, 0, 0)
         btnClose.Size = New Size(250, 60)
@@ -120,11 +117,11 @@ Partial Class frmHome
         btnPurchase.FlatStyle = FlatStyle.Flat
         btnPurchase.Font = New Font("Segoe UI", 12F)
         btnPurchase.ForeColor = Color.White
-        btnPurchase.Location = New Point(0, 424)
+        btnPurchase.Location = New Point(0, 390)
         btnPurchase.Name = "btnPurchase"
         btnPurchase.Padding = New Padding(10, 0, 0, 0)
         btnPurchase.Size = New Size(250, 60)
-        btnPurchase.TabIndex = 8
+        btnPurchase.TabIndex = 5
         btnPurchase.Text = "Purchase Orders"
         btnPurchase.TextAlign = ContentAlignment.MiddleLeft
         btnPurchase.UseVisualStyleBackColor = False
@@ -137,11 +134,11 @@ Partial Class frmHome
         btnBills.FlatStyle = FlatStyle.Flat
         btnBills.Font = New Font("Segoe UI", 12F)
         btnBills.ForeColor = Color.White
-        btnBills.Location = New Point(0, 484)
+        btnBills.Location = New Point(0, 450)
         btnBills.Name = "btnBills"
         btnBills.Padding = New Padding(10, 0, 0, 0)
         btnBills.Size = New Size(250, 60)
-        btnBills.TabIndex = 7
+        btnBills.TabIndex = 6
         btnBills.Text = "Bills"
         btnBills.TextAlign = ContentAlignment.MiddleLeft
         btnBills.UseVisualStyleBackColor = False
@@ -154,11 +151,11 @@ Partial Class frmHome
         btnSupplier.FlatStyle = FlatStyle.Flat
         btnSupplier.Font = New Font("Segoe UI", 12F)
         btnSupplier.ForeColor = Color.White
-        btnSupplier.Location = New Point(0, 364)
+        btnSupplier.Location = New Point(0, 330)
         btnSupplier.Name = "btnSupplier"
         btnSupplier.Padding = New Padding(10, 0, 0, 0)
         btnSupplier.Size = New Size(250, 60)
-        btnSupplier.TabIndex = 6
+        btnSupplier.TabIndex = 4
         btnSupplier.Text = "Supplier"
         btnSupplier.TextAlign = ContentAlignment.MiddleLeft
         btnSupplier.UseVisualStyleBackColor = False
@@ -171,11 +168,11 @@ Partial Class frmHome
         btnProducts.FlatStyle = FlatStyle.Flat
         btnProducts.Font = New Font("Segoe UI", 12F)
         btnProducts.ForeColor = Color.White
-        btnProducts.Location = New Point(0, 304)
+        btnProducts.Location = New Point(0, 270)
         btnProducts.Name = "btnProducts"
         btnProducts.Padding = New Padding(10, 0, 0, 0)
         btnProducts.Size = New Size(250, 60)
-        btnProducts.TabIndex = 5
+        btnProducts.TabIndex = 3
         btnProducts.Text = "Products"
         btnProducts.TextAlign = ContentAlignment.MiddleLeft
         btnProducts.UseVisualStyleBackColor = False
@@ -188,11 +185,11 @@ Partial Class frmHome
         btnEmployee.FlatStyle = FlatStyle.Flat
         btnEmployee.Font = New Font("Segoe UI", 12F)
         btnEmployee.ForeColor = Color.White
-        btnEmployee.Location = New Point(0, 244)
+        btnEmployee.Location = New Point(0, 210)
         btnEmployee.Name = "btnEmployee"
         btnEmployee.Padding = New Padding(10, 0, 0, 0)
         btnEmployee.Size = New Size(250, 60)
-        btnEmployee.TabIndex = 4
+        btnEmployee.TabIndex = 2
         btnEmployee.Text = "Employee"
         btnEmployee.TextAlign = ContentAlignment.MiddleLeft
         btnEmployee.UseVisualStyleBackColor = False
@@ -205,11 +202,11 @@ Partial Class frmHome
         btnOverView.FlatStyle = FlatStyle.Flat
         btnOverView.Font = New Font("Segoe UI", 12F)
         btnOverView.ForeColor = Color.White
-        btnOverView.Location = New Point(0, 184)
+        btnOverView.Location = New Point(0, 150)
         btnOverView.Name = "btnOverView"
         btnOverView.Padding = New Padding(10, 0, 0, 0)
         btnOverView.Size = New Size(250, 60)
-        btnOverView.TabIndex = 3
+        btnOverView.TabIndex = 1
         btnOverView.Text = "Overview"
         btnOverView.TextAlign = ContentAlignment.MiddleLeft
         btnOverView.UseVisualStyleBackColor = False
@@ -220,19 +217,11 @@ Partial Class frmHome
         Label1.BackColor = SystemColors.MenuHighlight
         Label1.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.White
-        Label1.Location = New Point(94, 27)
+        Label1.Location = New Point(10, 27)
         Label1.Name = "Label1"
         Label1.Size = New Size(151, 38)
-        Label1.TabIndex = 2
+        Label1.TabIndex = 0
         Label1.Text = "Dashboard"
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Location = New Point(10, 15)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(70, 70)
-        PictureBox1.TabIndex = 1
-        PictureBox1.TabStop = False
         ' 
         ' Panel2
         ' 
@@ -266,13 +255,11 @@ Partial Class frmHome
         Text = "Dashboard"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btnOverView As Button

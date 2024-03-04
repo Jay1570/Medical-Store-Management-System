@@ -41,14 +41,19 @@ Partial Class frmSales
         Label1.Location = New Point(10, 10)
         Label1.Name = "Label1"
         Label1.Size = New Size(182, 45)
-        Label1.TabIndex = 15
+        Label1.TabIndex = 0
         Label1.Text = "Sales"
         ' 
         ' dgvSales
         ' 
+        dgvSales.AllowUserToAddRows = False
+        dgvSales.AllowUserToDeleteRows = False
+        dgvSales.AllowUserToResizeColumns = False
+        dgvSales.AllowUserToResizeRows = False
         dgvSales.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvSales.BackgroundColor = Color.White
         dgvSales.BorderStyle = BorderStyle.None
+        dgvSales.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
         DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = SystemColors.MenuHighlight
         DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F)
@@ -71,7 +76,7 @@ Partial Class frmSales
         dgvSales.RowHeadersVisible = False
         dgvSales.RowHeadersWidth = 62
         dgvSales.Size = New Size(1030, 630)
-        dgvSales.TabIndex = 16
+        dgvSales.TabIndex = 1
         ' 
         ' Panel1
         ' 
@@ -82,14 +87,14 @@ Partial Class frmSales
         Panel1.Location = New Point(10, 690)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1030, 50)
-        Panel1.TabIndex = 17
+        Panel1.TabIndex = 0
         ' 
         ' btnShowAll
         ' 
         btnShowAll.Location = New Point(533, 8)
         btnShowAll.Name = "btnShowAll"
         btnShowAll.Size = New Size(112, 34)
-        btnShowAll.TabIndex = 12
+        btnShowAll.TabIndex = 2
         btnShowAll.Text = "Show All"
         btnShowAll.UseVisualStyleBackColor = True
         ' 
@@ -98,7 +103,7 @@ Partial Class frmSales
         btnSearch.Location = New Point(385, 8)
         btnSearch.Name = "btnSearch"
         btnSearch.Size = New Size(112, 34)
-        btnSearch.TabIndex = 9
+        btnSearch.TabIndex = 1
         btnSearch.Text = "Search"
         btnSearch.UseVisualStyleBackColor = True
         ' 

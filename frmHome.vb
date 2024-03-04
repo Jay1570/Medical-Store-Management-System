@@ -1,5 +1,4 @@
-﻿Imports System.ComponentModel
-
+﻿
 Public Class frmHome
 
     Dim empName As String
@@ -32,6 +31,13 @@ Public Class frmHome
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
 
+        overview.Close()
+        frmEmployee.Close()
+        frmProducts.Close()
+        frmSupplier.Close()
+        frmPurchase.Close()
+        frmBills.Close()
+        frmSales.Close()
         Close()
 
     End Sub
@@ -180,7 +186,7 @@ Public Class frmHome
 
     End Sub
 
-    Private Sub frmHome_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
 
         overview.Close()
         frmEmployee.Close()
@@ -189,11 +195,6 @@ Public Class frmHome
         frmPurchase.Close()
         frmBills.Close()
         frmSales.Close()
-
-    End Sub
-
-    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-
         frmLogin.Show()
         Close()
 

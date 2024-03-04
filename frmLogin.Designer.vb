@@ -27,11 +27,11 @@ Partial Class frmLogin
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
-        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         UsernameLabel = New Label()
         PasswordLabel = New Label()
         OK = New Button()
@@ -61,7 +61,7 @@ Partial Class frmLogin
         PasswordLabel.Location = New Point(140, 280)
         PasswordLabel.Name = "PasswordLabel"
         PasswordLabel.Size = New Size(220, 23)
-        PasswordLabel.TabIndex = 2
+        PasswordLabel.TabIndex = 0
         PasswordLabel.Text = "&Password"
         PasswordLabel.TextAlign = ContentAlignment.MiddleLeft
         ' 
@@ -79,7 +79,7 @@ Partial Class frmLogin
         ' 
         ' txtPassword
         ' 
-        txtPassword.CustomizableEdges = CustomizableEdges1
+        txtPassword.CustomizableEdges = CustomizableEdges5
         txtPassword.DefaultText = ""
         txtPassword.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         txtPassword.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -96,7 +96,7 @@ Partial Class frmLogin
         txtPassword.PasswordChar = "●"c
         txtPassword.PlaceholderText = ""
         txtPassword.SelectedText = ""
-        txtPassword.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        txtPassword.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         txtPassword.Size = New Size(220, 40)
         txtPassword.TabIndex = 2
         txtPassword.UseSystemPasswordChar = True
@@ -111,7 +111,7 @@ Partial Class frmLogin
         ' 
         ' txtUNM
         ' 
-        txtUNM.CustomizableEdges = CustomizableEdges3
+        txtUNM.CustomizableEdges = CustomizableEdges7
         txtUNM.DefaultText = ""
         txtUNM.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         txtUNM.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -128,7 +128,7 @@ Partial Class frmLogin
         txtUNM.PasswordChar = ChrW(0)
         txtUNM.PlaceholderText = ""
         txtUNM.SelectedText = ""
-        txtUNM.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        txtUNM.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         txtUNM.Size = New Size(220, 40)
         txtUNM.TabIndex = 1
         ' 
@@ -157,7 +157,7 @@ Partial Class frmLogin
         btnClose.Location = New Point(448, 12)
         btnClose.Name = "btnClose"
         btnClose.Size = New Size(40, 40)
-        btnClose.TabIndex = 5
+        btnClose.TabIndex = 4
         btnClose.Text = "X"
         btnClose.UseVisualStyleBackColor = False
         ' 

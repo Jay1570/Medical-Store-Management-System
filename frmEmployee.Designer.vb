@@ -41,7 +41,7 @@ Partial Class frmEmployee
         btnAdd.Location = New Point(190, 8)
         btnAdd.Name = "btnAdd"
         btnAdd.Size = New Size(112, 34)
-        btnAdd.TabIndex = 6
+        btnAdd.TabIndex = 1
         btnAdd.Text = "Insert"
         btnAdd.UseVisualStyleBackColor = True
         ' 
@@ -50,7 +50,7 @@ Partial Class frmEmployee
         btnUpdate.Location = New Point(320, 8)
         btnUpdate.Name = "btnUpdate"
         btnUpdate.Size = New Size(112, 34)
-        btnUpdate.TabIndex = 7
+        btnUpdate.TabIndex = 2
         btnUpdate.Text = "Update"
         btnUpdate.UseVisualStyleBackColor = True
         ' 
@@ -59,7 +59,7 @@ Partial Class frmEmployee
         btnDelete.Location = New Point(461, 8)
         btnDelete.Name = "btnDelete"
         btnDelete.Size = New Size(112, 34)
-        btnDelete.TabIndex = 8
+        btnDelete.TabIndex = 3
         btnDelete.Text = "Delete"
         btnDelete.UseVisualStyleBackColor = True
         ' 
@@ -68,7 +68,7 @@ Partial Class frmEmployee
         btnSearch.Location = New Point(601, 8)
         btnSearch.Name = "btnSearch"
         btnSearch.Size = New Size(112, 34)
-        btnSearch.TabIndex = 9
+        btnSearch.TabIndex = 4
         btnSearch.Text = "Search"
         btnSearch.UseVisualStyleBackColor = True
         ' 
@@ -77,7 +77,7 @@ Partial Class frmEmployee
         btnShowAll.Location = New Point(749, 8)
         btnShowAll.Name = "btnShowAll"
         btnShowAll.Size = New Size(112, 34)
-        btnShowAll.TabIndex = 12
+        btnShowAll.TabIndex = 5
         btnShowAll.Text = "Show All"
         btnShowAll.UseVisualStyleBackColor = True
         ' 
@@ -93,7 +93,7 @@ Partial Class frmEmployee
         Panel1.Location = New Point(10, 690)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1030, 50)
-        Panel1.TabIndex = 13
+        Panel1.TabIndex = 0
         ' 
         ' Label1
         ' 
@@ -103,11 +103,15 @@ Partial Class frmEmployee
         Label1.Location = New Point(10, 10)
         Label1.Name = "Label1"
         Label1.Size = New Size(182, 45)
-        Label1.TabIndex = 14
+        Label1.TabIndex = 0
         Label1.Text = "Employee"
         ' 
         ' dgvEmployee
         ' 
+        dgvEmployee.AllowUserToAddRows = False
+        dgvEmployee.AllowUserToDeleteRows = False
+        dgvEmployee.AllowUserToResizeColumns = False
+        dgvEmployee.AllowUserToResizeRows = False
         dgvEmployee.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvEmployee.BackgroundColor = Color.White
         dgvEmployee.BorderStyle = BorderStyle.None
@@ -133,7 +137,7 @@ Partial Class frmEmployee
         dgvEmployee.RowHeadersVisible = False
         dgvEmployee.RowHeadersWidth = 62
         dgvEmployee.Size = New Size(1030, 630)
-        dgvEmployee.TabIndex = 0
+        dgvEmployee.TabIndex = 1
         ' 
         ' frmEmployee
         ' 

@@ -1,5 +1,4 @@
 ﻿Imports System.Data.OleDb
-Imports System.Management
 
 Public Class frmInsertDialog
 

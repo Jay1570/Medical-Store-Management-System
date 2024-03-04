@@ -1,5 +1,4 @@
-﻿Imports System.Data.Common
-Imports System.Data.OleDb
+﻿Imports System.Data.OleDb
 
 Public Class frmInsertSaleItems
 
@@ -89,6 +88,8 @@ Public Class frmInsertSaleItems
             Return
 
         End If
+        cmbProducts.SelectedIndex = -1
+        txtQuantity.Text = ""
         Dim newItem As New BillItem()
         newItem.ProductName = pname
         newItem.Quantity = quantity

@@ -1,6 +1,4 @@
-Imports System.Configuration
 Imports System.Data.OleDb
-Imports System.Drawing.Imaging
 Public Class frmLogin
 
     Dim conn As New OleDbConnection
@@ -13,6 +11,8 @@ Public Class frmLogin
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Medical Store Management System.accdb"
 
     End Sub
+
+
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         Dim unm As String = txtUNM.Text
@@ -62,4 +62,8 @@ Public Class frmLogin
 
     End Sub
 
+    Private Sub frmLogin_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Activate()
+        txtUNM.Focus()
+    End Sub
 End Class

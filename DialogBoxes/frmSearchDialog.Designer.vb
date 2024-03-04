@@ -32,7 +32,7 @@ Partial Class frmSearchDialog
         btnSearch.Location = New Point(175, 540)
         btnSearch.Name = "btnSearch"
         btnSearch.Size = New Size(112, 40)
-        btnSearch.TabIndex = 9
+        btnSearch.TabIndex = 1
         btnSearch.Text = "Search"
         btnSearch.UseVisualStyleBackColor = True
         ' 
@@ -41,7 +41,7 @@ Partial Class frmSearchDialog
         btnCancel.Location = New Point(326, 540)
         btnCancel.Name = "btnCancel"
         btnCancel.Size = New Size(112, 40)
-        btnCancel.TabIndex = 10
+        btnCancel.TabIndex = 2
         btnCancel.Text = "Cancel"
         btnCancel.UseVisualStyleBackColor = True
         ' 
@@ -50,7 +50,7 @@ Partial Class frmSearchDialog
         FlowLayoutPanel1.Location = New Point(-1, 2)
         FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         FlowLayoutPanel1.Size = New Size(612, 529)
-        FlowLayoutPanel1.TabIndex = 11
+        FlowLayoutPanel1.TabIndex = 0
         ' 
         ' frmSearchDialog
         ' 

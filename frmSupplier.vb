@@ -116,20 +116,11 @@ Public Class frmSupplier
         If delete.ShowDialog() = DialogResult.OK Then
             values.Clear()
             selectedFields.Clear()
-            Dim query As String = "DELETE FROM Supplier WHERE "
+            Dim query As String = "DELETE FROM Supplier WHERE [Name] = "
             selectedFields = delete.SelectedFields
             values = delete.DeleteValues
             Try
-                For i As Integer = 0 To selectedFields.Count - 1
-                    If selectedFields(i).Contains("Contact") Then
-                        query &= selectedFields(i) & " = " & values(i) & " "
-                    Else
-                        query &= selectedFields(i) & " = " & "'" & values(i) & "' "
-                    End If
-                    If i < selectedFields.Count - 1 Then
-                        query &= " AND "
-                    End If
-                Next
+                query &= "'" & values(0) & "'"
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()

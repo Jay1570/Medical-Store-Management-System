@@ -22,8 +22,8 @@ Partial Class frmInsertSaleItems
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As DataGridViewCellStyle = New DataGridViewCellStyle()
         DataGridView1 = New DataGridView()
         Product_Name = New DataGridViewTextBoxColumn()
         Quantity = New DataGridViewTextBoxColumn()
@@ -48,27 +48,31 @@ Partial Class frmInsertSaleItems
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToAddRows = False
+        DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.AllowUserToResizeColumns = False
+        DataGridView1.AllowUserToResizeRows = False
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         DataGridView1.BackgroundColor = Color.White
         DataGridView1.BorderStyle = BorderStyle.None
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = SystemColors.Control
-        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F)
-        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
-        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = SystemColors.Control
+        DataGridViewCellStyle7.Font = New Font("Segoe UI", 9F)
+        DataGridViewCellStyle7.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = DataGridViewTriState.True
+        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Product_Name, Quantity, Price, Total_Amount})
-        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = SystemColors.Window
-        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F)
-        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
-        DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = SystemColors.Window
+        DataGridViewCellStyle8.Font = New Font("Segoe UI", 9F)
+        DataGridViewCellStyle8.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = DataGridViewTriState.False
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle8
         DataGridView1.Location = New Point(455, 12)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersVisible = False
@@ -111,11 +115,13 @@ Partial Class frmInsertSaleItems
         ' 
         ' cmbProducts
         ' 
+        cmbProducts.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        cmbProducts.AutoCompleteSource = AutoCompleteSource.ListItems
         cmbProducts.FormattingEnabled = True
         cmbProducts.Location = New Point(237, 32)
         cmbProducts.Name = "cmbProducts"
         cmbProducts.Size = New Size(182, 33)
-        cmbProducts.TabIndex = 2
+        cmbProducts.TabIndex = 1
         ' 
         ' Label2
         ' 
@@ -131,7 +137,7 @@ Partial Class frmInsertSaleItems
         lblQuantity.Location = New Point(237, 105)
         lblQuantity.Name = "lblQuantity"
         lblQuantity.Size = New Size(182, 31)
-        lblQuantity.TabIndex = 4
+        lblQuantity.TabIndex = 0
         ' 
         ' Label3
         ' 
@@ -147,14 +153,14 @@ Partial Class frmInsertSaleItems
         txtQuantity.Location = New Point(237, 171)
         txtQuantity.Name = "txtQuantity"
         txtQuantity.Size = New Size(182, 31)
-        txtQuantity.TabIndex = 6
+        txtQuantity.TabIndex = 3
         ' 
         ' btnAdd
         ' 
         btnAdd.Location = New Point(89, 416)
         btnAdd.Name = "btnAdd"
         btnAdd.Size = New Size(112, 40)
-        btnAdd.TabIndex = 7
+        btnAdd.TabIndex = 5
         btnAdd.Text = "Add"
         btnAdd.UseVisualStyleBackColor = True
         ' 
@@ -163,7 +169,7 @@ Partial Class frmInsertSaleItems
         btnRemove.Location = New Point(238, 416)
         btnRemove.Name = "btnRemove"
         btnRemove.Size = New Size(112, 40)
-        btnRemove.TabIndex = 8
+        btnRemove.TabIndex = 6
         btnRemove.Text = "Remove"
         btnRemove.UseVisualStyleBackColor = True
         ' 
@@ -188,7 +194,7 @@ Partial Class frmInsertSaleItems
         btnPrint.Location = New Point(89, 485)
         btnPrint.Name = "btnPrint"
         btnPrint.Size = New Size(112, 40)
-        btnPrint.TabIndex = 12
+        btnPrint.TabIndex = 7
         btnPrint.Text = "Print"
         btnPrint.UseVisualStyleBackColor = True
         ' 
@@ -197,7 +203,7 @@ Partial Class frmInsertSaleItems
         btnCancel.Location = New Point(238, 485)
         btnCancel.Name = "btnCancel"
         btnCancel.Size = New Size(112, 40)
-        btnCancel.TabIndex = 13
+        btnCancel.TabIndex = 8
         btnCancel.Text = "Cancel"
         btnCancel.UseVisualStyleBackColor = True
         ' 

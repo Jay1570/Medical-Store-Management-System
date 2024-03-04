@@ -3,16 +3,52 @@
   "WorkspaceRootPath": "E:\\Medical Store Management System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\frmemployee.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:frmemployee.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\dialogboxes\\frminsertsaleitems.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:dialogboxes\\frminsertsaleitems.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\frmemployee.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:frmemployee.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\dialogboxes\\frmdeletedialog.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:dialogboxes\\frmdeletedialog.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\dialogboxes\\frmsearchdialog.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:dialogboxes\\frmsearchdialog.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\dialogboxes\\frmupdatedialog.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:dialogboxes\\frmupdatedialog.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\dialogboxes\\frminsertdialog.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:dialogboxes\\frminsertdialog.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\frmsales.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:frmsales.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\frmbills.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:frmbills.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\frmpurchase.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:frmpurchase.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\frmsupplier.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:frmsupplier.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\frmproducts.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:frmproducts.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\frmemployee.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:frmemployee.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|e:\\medical store management system\\frmoverview.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{523842A1-FD52-4315-8B46-AA81B214B8AC}|Medical Store Management.vbproj|solutionrelative:frmoverview.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,39 +75,157 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmEmployee.vb",
-              "DocumentMoniker": "E:\\Medical Store Management System\\frmEmployee.vb",
-              "RelativeDocumentMoniker": "frmEmployee.vb",
-              "ToolTip": "E:\\Medical Store Management System\\frmEmployee.vb",
-              "RelativeToolTip": "frmEmployee.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJ4AAABGAAAA",
+              "Title": "frmInsertSaleItems.vb",
+              "DocumentMoniker": "E:\\Medical Store Management System\\DialogBoxes\\frmInsertSaleItems.vb",
+              "RelativeDocumentMoniker": "DialogBoxes\\frmInsertSaleItems.vb",
+              "ToolTip": "E:\\Medical Store Management System\\DialogBoxes\\frmInsertSaleItems.vb",
+              "RelativeToolTip": "DialogBoxes\\frmInsertSaleItems.vb",
+              "ViewState": "AQIAAMcAAAAAAAAAAAAgwOAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-03T05:30:31.583Z",
+              "WhenOpened": "2024-03-04T09:38:26.36Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmEmployee.vb [Design]",
-              "DocumentMoniker": "E:\\Medical Store Management System\\frmEmployee.vb",
-              "RelativeDocumentMoniker": "frmEmployee.vb",
-              "ToolTip": "E:\\Medical Store Management System\\frmEmployee.vb [Design]",
-              "RelativeToolTip": "frmEmployee.vb [Design]",
+              "Title": "frmDeleteDialog.vb",
+              "DocumentMoniker": "E:\\Medical Store Management System\\DialogBoxes\\frmDeleteDialog.vb",
+              "RelativeDocumentMoniker": "DialogBoxes\\frmDeleteDialog.vb",
+              "ToolTip": "E:\\Medical Store Management System\\DialogBoxes\\frmDeleteDialog.vb",
+              "RelativeToolTip": "DialogBoxes\\frmDeleteDialog.vb",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAIwE4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-03T05:29:56.119Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-03-04T09:36:11.618Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "frmSearchDialog.vb",
+              "DocumentMoniker": "E:\\Medical Store Management System\\DialogBoxes\\frmSearchDialog.vb",
+              "RelativeDocumentMoniker": "DialogBoxes\\frmSearchDialog.vb",
+              "ToolTip": "E:\\Medical Store Management System\\DialogBoxes\\frmSearchDialog.vb",
+              "RelativeToolTip": "DialogBoxes\\frmSearchDialog.vb",
+              "ViewState": "AQIAAH0AAAAAAAAAAADwv40AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-04T09:35:00.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmUpdateDialog.vb",
+              "DocumentMoniker": "E:\\Medical Store Management System\\DialogBoxes\\frmUpdateDialog.vb",
+              "RelativeDocumentMoniker": "DialogBoxes\\frmUpdateDialog.vb",
+              "ToolTip": "E:\\Medical Store Management System\\DialogBoxes\\frmUpdateDialog.vb",
+              "RelativeToolTip": "DialogBoxes\\frmUpdateDialog.vb",
+              "ViewState": "AQIAAI8AAAAAAAAAAADwv6AAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-04T09:33:03.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmInsertDialog.vb",
+              "DocumentMoniker": "E:\\Medical Store Management System\\DialogBoxes\\frmInsertDialog.vb",
+              "RelativeDocumentMoniker": "DialogBoxes\\frmInsertDialog.vb",
+              "ToolTip": "E:\\Medical Store Management System\\DialogBoxes\\frmInsertDialog.vb",
+              "RelativeToolTip": "DialogBoxes\\frmInsertDialog.vb",
+              "ViewState": "AQIAAFAAAAAAAAAAAADwv20AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-04T09:31:33.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmSales.vb",
+              "DocumentMoniker": "E:\\Medical Store Management System\\frmSales.vb",
+              "RelativeDocumentMoniker": "frmSales.vb",
+              "ToolTip": "E:\\Medical Store Management System\\frmSales.vb",
+              "RelativeToolTip": "frmSales.vb",
+              "ViewState": "AQIAADUAAAAAAAAAAADwv1gAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-04T09:28:07.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmBills.vb",
+              "DocumentMoniker": "E:\\Medical Store Management System\\frmBills.vb",
+              "RelativeDocumentMoniker": "frmBills.vb",
+              "ToolTip": "E:\\Medical Store Management System\\frmBills.vb",
+              "RelativeToolTip": "frmBills.vb",
+              "ViewState": "AQIAADkAAAAAAAAAAAAIwFcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-04T09:26:50.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmPurchase.vb",
+              "DocumentMoniker": "E:\\Medical Store Management System\\frmPurchase.vb",
+              "RelativeDocumentMoniker": "frmPurchase.vb",
+              "ToolTip": "E:\\Medical Store Management System\\frmPurchase.vb",
+              "RelativeToolTip": "frmPurchase.vb",
+              "ViewState": "AQIAAHkAAAAAAAAAAADwv5YAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-04T09:25:50.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "frmSupplier.vb",
               "DocumentMoniker": "E:\\Medical Store Management System\\frmSupplier.vb",
               "RelativeDocumentMoniker": "frmSupplier.vb",
               "ToolTip": "E:\\Medical Store Management System\\frmSupplier.vb",
               "RelativeToolTip": "frmSupplier.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAMQAAAALAAAA",
+              "ViewState": "AQIAAKAAAAAAAAAAAADwv70AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-03T05:22:19.594Z",
+              "WhenOpened": "2024-03-04T09:24:31.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmProducts.vb",
+              "DocumentMoniker": "E:\\Medical Store Management System\\frmProducts.vb",
+              "RelativeDocumentMoniker": "frmProducts.vb",
+              "ToolTip": "E:\\Medical Store Management System\\frmProducts.vb",
+              "RelativeToolTip": "frmProducts.vb",
+              "ViewState": "AQIAAKEAAAAAAAAAAADwv74AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-04T09:21:30.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmEmployee.vb",
+              "DocumentMoniker": "E:\\Medical Store Management System\\frmEmployee.vb",
+              "RelativeDocumentMoniker": "frmEmployee.vb",
+              "ToolTip": "E:\\Medical Store Management System\\frmEmployee.vb",
+              "RelativeToolTip": "frmEmployee.vb",
+              "ViewState": "AQIAAKIAAAAAAAAAAADwv78AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-04T09:17:50.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "frmOverView.vb",
+              "DocumentMoniker": "E:\\Medical Store Management System\\frmOverView.vb",
+              "RelativeDocumentMoniker": "frmOverView.vb",
+              "ToolTip": "E:\\Medical Store Management System\\frmOverView.vb",
+              "RelativeToolTip": "frmOverView.vb",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAIwDwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-04T09:15:57.555Z",
               "EditorCaption": ""
             }
           ]

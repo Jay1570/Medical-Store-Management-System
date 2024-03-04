@@ -49,7 +49,7 @@ Public Class frmBills
             selectedFields.Clear()
             selectedFields = search.SelectedFields
             values = search.SearchValues
-            Dim f As String = ""
+            Dim f As String
 
             Dim comparativeOperator() As String = search.ComparativeOperators
 
