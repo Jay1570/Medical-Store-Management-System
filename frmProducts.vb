@@ -49,7 +49,7 @@ Public Class frmProducts
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()
-                MsgBox("Employee data inserted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
+                MsgBox("Inserted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                 conn.Close()
                 showdata()
 
@@ -94,7 +94,7 @@ Public Class frmProducts
                 Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
                 conn.Close()
                 If rowsAffected > 0 Then
-                    MsgBox("Employee data updated successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
+                    MsgBox("Updated successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                     showdata()
                 Else
                     MsgBox("No Record was updated", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")

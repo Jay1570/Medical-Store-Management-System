@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Globalization
 Public Class frmPurchase
 
     Dim conn As New OleDbConnection
@@ -90,7 +91,6 @@ Public Class frmPurchase
             selectedFields.Clear()
             selectedFields = search.SelectedFields
             values = search.SearchValues
-            Dim f As String
 
             Dim comparativeOperator() As String = search.ComparativeOperators
 
@@ -115,10 +115,8 @@ Public Class frmPurchase
                         conn.Close()
                         query &= "sid = " & sid.ToString() & " "
                     ElseIf selectedFields(i).Contains("Date") Then
-                        Dim dateParts As String() = values(i).Split("-"c)
-                        f = $"{dateParts(0)}/{dateParts(1)}/{dateParts(2)}"
-                        Dim d As DateTime = DateTime.Parse(f)
-                        query &= selectedFields(i) & " = #" & d & "# "
+                        Dim d As DateTime = DateTime.Parse(values(i))
+                        query &= selectedFields(i) & " = #" & d.ToString("MM/dd/yyyy") & "# "
                     Else
                         query &= selectedFields(i) & " = " & "'" & values(i) & "' "
                     End If

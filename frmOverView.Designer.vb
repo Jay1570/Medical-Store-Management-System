@@ -56,7 +56,7 @@ Partial Class frmOverView
         ' 
         ' panelQuantity
         ' 
-        panelQuantity.BackColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
+        panelQuantity.BackColor = Color.Maroon
         panelQuantity.Controls.Add(Label2)
         panelQuantity.Controls.Add(lblSales)
         panelQuantity.Controls.Add(Label1)
@@ -100,7 +100,7 @@ Partial Class frmOverView
         ' 
         ' panelSale
         ' 
-        panelSale.BackColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
+        panelSale.BackColor = Color.Maroon
         panelSale.Controls.Add(Label6)
         panelSale.Controls.Add(lblPurchase1)
         panelSale.Controls.Add(Label3)
@@ -144,7 +144,7 @@ Partial Class frmOverView
         ' 
         ' panelPurchase
         ' 
-        panelPurchase.BackColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
+        panelPurchase.BackColor = Color.Maroon
         panelPurchase.Controls.Add(Label8)
         panelPurchase.Controls.Add(lblStock)
         panelPurchase.Controls.Add(Label5)
@@ -188,7 +188,7 @@ Partial Class frmOverView
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
+        Panel1.BackColor = Color.Maroon
         Panel1.Controls.Add(Label9)
         Panel1.Controls.Add(lblProfit)
         Panel1.Controls.Add(Label7)
@@ -232,7 +232,7 @@ Partial Class frmOverView
         ' 
         ' Panel2
         ' 
-        Panel2.BackColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
+        Panel2.BackColor = Color.Maroon
         Panel2.Controls.Add(Label10)
         Panel2.Controls.Add(lblSalary)
         Panel2.Controls.Add(Label4)
@@ -276,7 +276,7 @@ Partial Class frmOverView
         ' 
         ' Panel3
         ' 
-        Panel3.BackColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
+        Panel3.BackColor = Color.Maroon
         Panel3.Controls.Add(lblUnm)
         Panel3.Controls.Add(Label13)
         Panel3.Location = New Point(54, 162)
@@ -310,7 +310,7 @@ Partial Class frmOverView
         ' 
         Label11.BackColor = Color.White
         Label11.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label11.ForeColor = SystemColors.MenuHighlight
+        Label11.ForeColor = Color.Red
         Label11.Location = New Point(10, 10)
         Label11.Name = "Label11"
         Label11.Size = New Size(182, 45)

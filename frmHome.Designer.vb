@@ -40,7 +40,7 @@ Partial Class frmHome
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = SystemColors.MenuHighlight
+        Panel1.BackColor = Color.Red
         Panel1.Controls.Add(btnLogout)
         Panel1.Controls.Add(btnSales)
         Panel1.Controls.Add(btnClose)
@@ -60,7 +60,7 @@ Partial Class frmHome
         ' 
         ' btnLogout
         ' 
-        btnLogout.BackColor = SystemColors.MenuHighlight
+        btnLogout.BackColor = Color.Red
         btnLogout.Cursor = Cursors.Hand
         btnLogout.FlatAppearance.BorderSize = 0
         btnLogout.FlatStyle = FlatStyle.Flat
@@ -77,7 +77,7 @@ Partial Class frmHome
         ' 
         ' btnSales
         ' 
-        btnSales.BackColor = SystemColors.MenuHighlight
+        btnSales.BackColor = Color.Red
         btnSales.Cursor = Cursors.Hand
         btnSales.FlatAppearance.BorderSize = 0
         btnSales.FlatStyle = FlatStyle.Flat
@@ -94,7 +94,7 @@ Partial Class frmHome
         ' 
         ' btnClose
         ' 
-        btnClose.BackColor = SystemColors.MenuHighlight
+        btnClose.BackColor = Color.Red
         btnClose.Cursor = Cursors.Hand
         btnClose.FlatAppearance.BorderSize = 0
         btnClose.FlatStyle = FlatStyle.Flat
@@ -111,7 +111,7 @@ Partial Class frmHome
         ' 
         ' btnPurchase
         ' 
-        btnPurchase.BackColor = SystemColors.MenuHighlight
+        btnPurchase.BackColor = Color.Red
         btnPurchase.Cursor = Cursors.Hand
         btnPurchase.FlatAppearance.BorderSize = 0
         btnPurchase.FlatStyle = FlatStyle.Flat
@@ -128,7 +128,7 @@ Partial Class frmHome
         ' 
         ' btnBills
         ' 
-        btnBills.BackColor = SystemColors.MenuHighlight
+        btnBills.BackColor = Color.Red
         btnBills.Cursor = Cursors.Hand
         btnBills.FlatAppearance.BorderSize = 0
         btnBills.FlatStyle = FlatStyle.Flat
@@ -145,7 +145,7 @@ Partial Class frmHome
         ' 
         ' btnSupplier
         ' 
-        btnSupplier.BackColor = SystemColors.MenuHighlight
+        btnSupplier.BackColor = Color.Red
         btnSupplier.Cursor = Cursors.Hand
         btnSupplier.FlatAppearance.BorderSize = 0
         btnSupplier.FlatStyle = FlatStyle.Flat
@@ -162,7 +162,7 @@ Partial Class frmHome
         ' 
         ' btnProducts
         ' 
-        btnProducts.BackColor = SystemColors.MenuHighlight
+        btnProducts.BackColor = Color.Red
         btnProducts.Cursor = Cursors.Hand
         btnProducts.FlatAppearance.BorderSize = 0
         btnProducts.FlatStyle = FlatStyle.Flat
@@ -179,7 +179,7 @@ Partial Class frmHome
         ' 
         ' btnEmployee
         ' 
-        btnEmployee.BackColor = SystemColors.MenuHighlight
+        btnEmployee.BackColor = Color.Red
         btnEmployee.Cursor = Cursors.Hand
         btnEmployee.FlatAppearance.BorderSize = 0
         btnEmployee.FlatStyle = FlatStyle.Flat
@@ -196,7 +196,7 @@ Partial Class frmHome
         ' 
         ' btnOverView
         ' 
-        btnOverView.BackColor = SystemColors.MenuHighlight
+        btnOverView.BackColor = Color.Red
         btnOverView.Cursor = Cursors.Hand
         btnOverView.FlatAppearance.BorderSize = 0
         btnOverView.FlatStyle = FlatStyle.Flat
@@ -214,7 +214,7 @@ Partial Class frmHome
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = SystemColors.MenuHighlight
+        Label1.BackColor = Color.Red
         Label1.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.White
         Label1.Location = New Point(10, 27)

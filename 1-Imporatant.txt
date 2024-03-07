@@ -1,0 +1,1 @@
+To run application, there is no need to change connection string as it is dynamic connection string works in any device without changing connection string. Please make sure database file is located at where ".exe" file of application is located.

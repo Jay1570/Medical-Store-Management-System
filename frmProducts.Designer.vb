@@ -104,10 +104,10 @@ Partial Class frmProducts
         dgvProducts.BackgroundColor = Color.White
         dgvProducts.BorderStyle = BorderStyle.None
         DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = SystemColors.MenuHighlight
+        DataGridViewCellStyle1.BackColor = Color.Red
         DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F)
         DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionBackColor = Color.Red
         DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
         dgvProducts.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
@@ -116,7 +116,7 @@ Partial Class frmProducts
         DataGridViewCellStyle2.BackColor = SystemColors.Window
         DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F)
         DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionBackColor = Color.Red
         DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
         dgvProducts.DefaultCellStyle = DataGridViewCellStyle2
@@ -131,7 +131,7 @@ Partial Class frmProducts
         ' 
         Label1.BackColor = Color.White
         Label1.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = SystemColors.MenuHighlight
+        Label1.ForeColor = Color.Red
         Label1.Location = New Point(10, 10)
         Label1.Name = "Label1"
         Label1.Size = New Size(186, 45)

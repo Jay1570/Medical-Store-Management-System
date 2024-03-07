@@ -57,7 +57,7 @@ Partial Class formSplash
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.MenuHighlight
+        BackColor = Color.Red
         ClientSize = New Size(620, 360)
         Controls.Add(ProgressBarLoad)
         Controls.Add(labelApp)

@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Globalization
 
 Public Class frmBills
 
@@ -49,22 +50,19 @@ Public Class frmBills
             selectedFields.Clear()
             selectedFields = search.SelectedFields
             values = search.SearchValues
-            Dim f As String
 
             Dim comparativeOperator() As String = search.ComparativeOperators
 
             Try
 
-                Dim query As String = "SELECT Id As [Sale Id],[Date],Amount WHERE "
+                Dim query As String = "SELECT Id AS [Sale Id],[Date],Amount AS [Total Amount] FROM Sales WHERE "
                 For i As Integer = 0 To selectedFields.Count - 1
                     If selectedFields(i).Contains("Amount") Then
                         query &= selectedFields(i) & " " & comparativeOperator(j) & " " & values(i) & " "
                         j += 1
                     ElseIf selectedFields(i).Contains("Date") Then
-                        Dim dateParts As String() = values(i).Split("-"c)
-                        f = $"{dateParts(0)}/{dateParts(1)}/{dateParts(2)}"
-                        Dim d As DateTime = DateTime.Parse(f)
-                        query &= selectedFields(i) & " = #" & d & "# "
+                        Dim d As DateTime = DateTime.Parse(values(i))
+                        query &= selectedFields(i) & " = #" & d.ToString("MM/dd/yyyy") & "# "
                     End If
                     If i < selectedFields.Count - 1 Then
                         query &= " AND "
@@ -85,4 +83,7 @@ Public Class frmBills
 
     End Sub
 
+    Private Sub btnShowAll_Click(sender As Object, e As EventArgs) Handles btnShowAll.Click
+        showdata()
+    End Sub
 End Class

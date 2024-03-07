@@ -53,7 +53,9 @@ Public Class frmInsertSaleItems
     End Sub
 
     Private Sub cmbProducts_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbProducts.SelectedIndexChanged
-
+        If cmbProducts.SelectedIndex.Equals(-1) Then
+            Return
+        End If
         Dim pname As String = cmbProducts.SelectedItem().ToString()
         conn.Open()
         cmd = New OleDbCommand("SELECT Stock,Price FROM Products WHERE [Name] = '" & pname & "'", conn)
@@ -67,6 +69,7 @@ Public Class frmInsertSaleItems
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+
         If cmbProducts.SelectedIndex.Equals(-1) Then
             MsgBox("Please Select Product", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
             Return
@@ -90,6 +93,7 @@ Public Class frmInsertSaleItems
         End If
         cmbProducts.SelectedIndex = -1
         txtQuantity.Text = ""
+        lblQuantity.Text = ""
         Dim newItem As New BillItem()
         newItem.ProductName = pname
         newItem.Quantity = quantity
@@ -123,7 +127,7 @@ Public Class frmInsertSaleItems
 
         Next
         If totalAmount = 0 Then
-            MsgBox("All Fields Are Mandatory!!!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
+            MsgBox("No Products are added!!!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
             Return
         End If
 

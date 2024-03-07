@@ -36,7 +36,7 @@ Public Class frmEmployee
 
         Dim insert As New frmInsertDialog(fields)
         If insert.ShowDialog() = DialogResult.OK Then
-            Dim query As String = "INSERT INTO Employee([Name],Username,[Password],Salary,Designation) VALUES ("
+            Dim query As String = "INSERT INTO Employee(Username,[Name],[Password],Salary,Designation) VALUES ("
             values.Clear()
             values = insert.InsertValues
             Try
@@ -50,7 +50,7 @@ Public Class frmEmployee
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()
-                MsgBox("Employee data inserted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
+                MsgBox("Inserted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                 conn.Close()
                 showdata()
 
@@ -95,7 +95,7 @@ Public Class frmEmployee
                 Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
                 conn.Close()
                 If rowsAffected > 0 Then
-                    MsgBox("Employee data updated successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
+                    MsgBox("Updated successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                     showdata()
                 Else
                     MsgBox("No records were updated.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Error!")
@@ -126,7 +126,7 @@ Public Class frmEmployee
                 conn.Open()
                 cmd = New OleDbCommand(query, conn)
                 cmd.ExecuteNonQuery()
-                MsgBox("Employee data Deleted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
+                MsgBox("Deleted successfully!", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Success")
                 conn.Close()
                 showdata()
 
