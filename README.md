@@ -1,4 +1,4 @@
-#Medical Store Management System
+# Medical Store Management System
 Video of the system to demonstrate the functionality of the system
 
 
